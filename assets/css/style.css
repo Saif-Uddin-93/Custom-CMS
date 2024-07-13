@@ -7,6 +7,12 @@ a{
     text-decoration: none   ;
 }
 
+button{
+    background: none;
+    border: none;
+    color: white;
+}
+
 #body-wrapper{
     display: flex;
     flex-direction: column;
@@ -37,11 +43,11 @@ a{
         display: flex;
         justify-content: center;
         align-items: center;
-        button{
+        /* button{
             background: none;
             border: none;
             color: white;
-        }
+        } */
     }
 }
 
@@ -57,7 +63,7 @@ a{
     width: 150px;
     background-color: #101517;
     .tab{
-        a{
+        a, button{
             padding: 0.5rem 1rem;
             display: flex;
             flex-direction: row;
