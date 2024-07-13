@@ -43,11 +43,6 @@ button{
         display: flex;
         justify-content: center;
         align-items: center;
-        /* button{
-            background: none;
-            border: none;
-            color: white;
-        } */
     }
 }
 
@@ -64,12 +59,14 @@ button{
     background-color: #101517;
     .tab{
         a, button{
+            /* active bg colour when active 
+            background-color: #4c70ae; */
             padding: 0.5rem 1rem;
             display: flex;
             flex-direction: row;
             align-items: center;
             .tab-icon{
-                height: 25px;
+                height: 20px;
                 width: 34px;
                 padding-right: 10px;
             }
@@ -77,6 +74,13 @@ button{
                 color: white;
                 text-align: center;
             }
+        }
+        .tab-content a{
+            background-color: #2f3239;
+            color: #909296;
+            padding: 1rem 0;
+            padding-left: 1.6rem;
+            padding-right: 0.5rem;
         }
     }
 }
