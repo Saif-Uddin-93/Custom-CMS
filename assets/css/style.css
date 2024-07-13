@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+a{
+    text-decoration: none   ;
+}
+
 #body-wrapper{
     display: flex;
     flex-direction: column;
@@ -15,9 +19,14 @@
 }
 
 #top-nav{
-    height: 30px;
+    /* height: 30px; */
     width: 100%;
     background-color: #101517;
+    #logo{
+        padding: 0.5rem 1rem;
+        height: 30px;
+        width: 30px;
+    }
 }
 
 #aside-wrapper{
@@ -28,22 +37,24 @@
 #tabs{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 720px;
     width: 150px;
     background-color: #101517;
     .tab{
-        padding: 0.5rem 1rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        .tab-icon{
-            height: 30px;
-            width: 34px;
-            padding-right: 10px;
-        }
-        .tab-name{
-            color: white;
-            text-align: center;
+        a{
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .tab-icon{
+                height: 25px;
+                width: 34px;
+                padding-right: 10px;
+            }
+            .tab-name{
+                color: white;
+                text-align: center;
+            }
         }
     }
 }
