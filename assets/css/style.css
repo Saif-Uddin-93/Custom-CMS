@@ -19,13 +19,29 @@ a{
 }
 
 #top-nav{
-    /* height: 30px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     background-color: #101517;
     #logo{
-        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0rem;
         height: 30px;
-        width: 30px;
+        width: 150px;
+    }
+    #login-button{
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+            background: none;
+            border: none;
+            color: white;
+        }
     }
 }
 
