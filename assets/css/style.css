@@ -108,3 +108,10 @@ aside, #aside-wrapper{
         min-width: 1802px;
     }
 }
+
+@media(max-width: 760px){
+    #body-wrapper{
+        max-width: 760px;
+        min-width: 100%
+    }
+}
