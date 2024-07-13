@@ -27,13 +27,13 @@ button{
 
 #body-wrapper{
     /* max-width: 1440px; */
-    /* max-width: 1584px; */
-    max-width: 2048px;
+    max-width: 1584px;
+    min-width: 1394px;
     width: 100%;
-    min-width: 88%;
 }
 
 #top-nav{
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,9 +85,6 @@ aside, #aside-wrapper{
             }
         }
         .tab-content{
-            /* min-height: 196px;
-            max-height: 196px;
-            overflow:hidden; */
             .tab-content-item{
                 background-color: #2f3239;
                 color: #909296;
@@ -107,7 +104,7 @@ aside, #aside-wrapper{
 
 @media(min-width: 1584px){
     #body-wrapper{
-        width: 100%;
         max-width: 2048px;
+        min-width: 1802px;
     }
 }
