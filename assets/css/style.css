@@ -1,5 +1,8 @@
 :root{
     --aside-width: 180px;
+    --desktop-max-width: 2048px;
+    --laptop-max-width: 1584px;
+    --mobile-max-width: 760px;
 }
 
 *{
@@ -27,17 +30,25 @@ button{
 
 #body-wrapper{
     /* max-width: 1440px; */
-    max-width: 1584px;
+    max-width: var(--laptop-max-width);
     min-width: 1394px;
     width: 100%;
 }
 
-#top-nav{
+/* header, #header-wrapper{
+    max-width: var(--laptop-max-width);
+} */
+
+header{
     position: sticky;
+    top: 0;
+    /* left: 0; */
+    z-index: 2;
+}
+
+#header-wrapper{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
     background-color: #101517;
     #logo{
         display: flex;
@@ -45,18 +56,31 @@ button{
         align-items: center;
         padding: 0.5rem 0rem;
         height: 30px;
+        min-width: var(--aside-width);
         width: var(--aside-width);
     }
-    #login-button{
-        padding: 0.5rem 1rem;
+    #top-nav{
+        /* position: sticky; */
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
+        width: 100%;
+        #login-button{
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
 aside, #aside-wrapper{
     width: var(--aside-width);
+}
+aside{
+    position: sticky;
+    top: 46px;
+    left: 0;
 }
 
 #tabs{
@@ -68,7 +92,7 @@ aside, #aside-wrapper{
     background-color: #101517;
     .tab{
         a, button{
-            /* active bg colour when active 
+            /* active bg colour when active
             background-color: #4c70ae; */
             padding: 0.5rem 1rem;
             display: flex;
@@ -102,11 +126,20 @@ aside, #aside-wrapper{
     }
 }
 
+@media(min-width: 760px){
+    #body-wrapper{
+        min-width: 100%
+    }
+}
+
 @media(min-width: 1584px){
     #body-wrapper{
         max-width: 2048px;
         min-width: 1802px;
     }
+    /* header, #header-wrapper{
+        max-width: var(--desktop-max-width);
+    } */
 }
 
 @media(max-width: 760px){
@@ -114,4 +147,7 @@ aside, #aside-wrapper{
         max-width: 760px;
         min-width: 100%
     }
+    /* header, #header-wrapper{
+        max-width: var(--mobile-max-width);
+    } */
 }
