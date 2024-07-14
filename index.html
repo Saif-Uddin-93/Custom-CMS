@@ -15,8 +15,8 @@
                     <!-- icon source: https://uxwing.com/register-symbol-icon/ -->
                 </div>
                 <div id="top-nav">
-                    <div id="login-button">
-                        <button>Login</button>
+                    <div id="login-button-wrapper">
+                        <button id="login-button">Login</button>
                     </div>
                 </div>
             </div>
@@ -65,11 +65,30 @@
                         </div>
                     </div>
                 </aside>
+                <section id="login-modal" class="hide-modal">
+                    <div id="login-modal-bg">
+                        <div id="login-modal-content">
+                            <div id="login-input">
+                                <div id="login-user">
+                                    <label for="login-user-input" id="login-user-input-label">Username</label>
+                                    <input type="text" id="login-user-input">
+                                </div>
+                                <div id="login-password">
+                                    <label for="login-password-input" id="login-password-input-label">Password</label>
+                                    <input type="text" id="login-password-input">
+                                </div>
+                                <button type="submit">Log in</button>
+                                <button type="submit">Create account</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
         <footer>
 
         </footer>
+        <script src="./assets/js/script.js"></script>
     </div>
 </body>
 </html>
