@@ -1,12 +1,13 @@
-function openLoginModal(event){
-    document.querySelector("#login-modal").classList.toggle('hide-modal')
-}
+const loginModal = document.querySelector("#login-modal");
 
-addGlobalEventListener('click', openLoginModal, '#login-button');
+document.addEventListener('click', (event)=>{
+    if (event.target.matches('#login-button')) {
+        loginModal.classList.toggle('hide-modal')
+    }
+})
 
-function addGlobalEventListener(typeOfEvent, callback, selector, stopPropagation=true) {
-    document.addEventListener(typeOfEvent, (eventObj) => {
-        if (eventObj.target.matches(selector)) callback(eventObj);
-        if (stopPropagation) eventObj.stopPropagation();
-    })
-}
+document.addEventListener('keydown', (event)=>{
+    if (event.key === "Escape" && loginModal.className != 'hide-modal') {
+        loginModal.classList.toggle('hide-modal')
+    }
+})
