@@ -11,3 +11,9 @@ document.addEventListener('keydown', (event)=>{
         loginModal.classList.toggle('hide-modal')
     }
 })
+
+document.addEventListener('click', (event)=>{
+    if (event.target.matches('.close-icon')) {
+        loginModal.classList.toggle('hide-modal')
+    }
+})
