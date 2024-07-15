@@ -93,7 +93,7 @@ header{
         align-items: center;
         width: 100%;
         #login-button-wrapper{
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
