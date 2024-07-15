@@ -47,10 +47,15 @@ button{
         border-radius: 5px;
         font-size: 10px;
         &:hover{
-            color: red;
-            background-color: #12181b;
+            color: rgb(255, 20, 20);
+            background-color: rgb(23, 32, 38);
             border: 1px solid #3c4d55;
             border-radius: 5px;
+            &:active{
+                background-color: rgb(14, 20, 24);
+                border: 1px solid #242e33;
+                color: rgb(230, 0, 0);
+            }
         }
     }
 }
@@ -188,11 +193,11 @@ aside{
             gap: 2rem;
             #login-user-input, #login-password-input
             {
-                padding-left: 0.2rem;
+                padding: 0.2rem;
                 color: black;
                 display: flex;
                 flex-direction: column;
-    
+                font-weight: 600;
             }
         }
     }
