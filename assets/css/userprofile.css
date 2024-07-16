@@ -4,7 +4,7 @@
 
 #profile-display-wrapper{
     background-color: #183649;
-    height: 370px;
+    height: 310px;
     padding-top: 1.5rem;
     padding-bottom: 2rem;
     #profile-display{
@@ -18,8 +18,8 @@
             justify-content: center;
             align-items: center;
             img{
-                height: 260px;
-                width: 260px;
+                height: 200px;
+                width: 200px;
             }
         }
         #profile-tag{
@@ -35,6 +35,12 @@
                 border: 1px solid #191c1f;
                 background-color: #121517;
                 border-radius: 5px;
+                font-weight: 400;
+                &:hover{
+                    background-color: #102431;
+                    border: 1px solid #364b60;
+                    font-weight: 500;
+                }
             }
         }
     }
