@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div id="body-wrapper">
+        <header>
+            <div id="header-wrapper">
+                <div id="logo">
+                    <img src="./assets/images/register-symbol-icon.svg" alt="company logo">
+                    <!-- icon source: https://uxwing.com/register-symbol-icon/ -->
+                </div>
+                <div id="top-nav">
+                    <div id="login-button-wrapper">
+                        <button id="login-button">Login</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="main-wrapper">
+                <aside>
+                    <div id="aside-wrapper">
+                        <div id="tabs">
+                            <div class="tab">
+                                <a id="dashboard-link" href="#">
+                                    <div class="tab-icon-wrapper">
+                                        <img class="tab-icon" src="./assets/images/speedometer-color-icon.svg" alt="dashboard icon">
+                                        <!-- icon source: https://uxwing.com/speedometer-color-icon/ -->
+                                    </div>
+                                    <div class="tab-name">
+                                        Dashboard
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tab">
+                                <button class="posts-button" href="#">
+                                    <div class="tab-icon-wrapper">
+                                        <img class="tab-icon" src="./assets/images/pin-icon.svg" alt="posts icon">
+                                        <!-- icon source: https://uxwing.com/pin-icon/ -->
+                                    </div>
+                                    <div class="tab-name">
+                                        Posts
+                                    </div>
+                                </button>
+                                <div class="tab-content">
+                                    <a class="tab-content-item" href="./all_posts.html">
+                                        All Posts
+                                    </a>
+                                    <a class="tab-content-item" href="./add_new_post.html">
+                                        Add New Post
+                                    </a>
+                                    <a class="tab-content-item" href="./categories.html">
+                                        Categories
+                                    </a>
+                                    <a class="tab-content-item" href="#">
+                                        Tags
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <section id="login-modal" class="hide-modal">
+                    <div id="login-modal-bg">
+                        <div id="login-modal-content">
+                            <button class="close-icon">X</button>
+                            <div id="login-input">
+                                <div id="login-user">
+                                    <label for="login-user-input" id="login-user-input-label">Username</label>
+                                    <input type="text" id="login-user-input">
+                                </div>
+                                <div id="login-password">
+                                    <label for="login-password-input" id="login-password-input-label">Password</label>
+                                    <input type="password" id="login-password-input">
+                                </div>
+                                <button id="sign-in-button" type="submit" href>Log in</button>
+                                <button id="new-user-button" type="submit">Create account</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+        <script src="./assets/js/script.js"></script>
+    </div>
+</body>
+</html>

@@ -21,6 +21,10 @@ document.addEventListener('click', (event)=>{
         } else {console.log('login unsuccessful')}
     }
 
+    if (event.target.matches('#log-out')){
+        location.href = './index.html'
+    }
+
     // create new user
     if (event.target.matches('#new-user-button')){
         location.href = './create_new_user.html';
