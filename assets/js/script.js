@@ -8,7 +8,7 @@ const password = 'pass';
 
 document.addEventListener('click', (event)=>{
     // open/close login modal
-    if (event.target.matches('#login-button') || 
+    if (event.target.matches('#login-button') ||
         event.target.matches('.close-icon')) {
         loginModal.classList.toggle('hide-modal');
     }
@@ -27,8 +27,10 @@ document.addEventListener('click', (event)=>{
     }
 })
 
+// close login modal on escape key press
 document.addEventListener('keydown', (event)=>{
     if (event.key === "Escape" && !loginModal.className.includes('hide-modal')) {
         loginModal.classList.toggle('hide-modal')
     }
 })
+

@@ -120,7 +120,7 @@ aside{
     flex-direction: column;
     height: 977px;
     min-height: 720px;
-    width: var(--aside-width);
+    /* width: var(--aside-width); */
     background-color: #101517;
     .tab{
         a, button{

@@ -1,0 +1,45 @@
+:root{
+    --aside-width: 300px;
+}
+
+#profile-display-wrapper{
+    background-color: #183649;
+    height: 370px;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    #profile-display{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #profile-display-pic{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                height: 260px;
+                width: 260px;
+            }
+        }
+        #profile-tag{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+        #log-out-wrapper{
+            margin: 2rem;
+            #log-out{
+                padding: 0.4rem 1rem;
+                border: 1px solid #191c1f;
+                background-color: #121517;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+#tabs{
+    background-color: #183649;
+}
