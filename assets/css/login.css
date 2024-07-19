@@ -1,0 +1,119 @@
+#body-wrapper{
+    max-width: var(--laptop-max-width);
+    min-width: 1394px;
+    width: 100%;
+}
+
+
+header{
+    position: sticky;
+    top: 0;
+    /* left: 0; */
+    z-index: 2;
+}
+
+#header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    background-color: #101517;
+    #logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0rem;
+        height: 30px;
+        min-width: var(--aside-width);
+        width: var(--aside-width);
+    }
+    #top-nav{
+        /* position: sticky; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        #login-button-wrapper{
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+#login-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 720px;
+    width: 100%;
+    #cms-info, #login-main-content{
+        /* opacity: 0.5; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #2f323978;
+        border: 3px solid #101517;
+        border-radius: 25px;
+        height: 67%;
+        width: 45%;
+        min-height: 660px;
+    }
+    #login-main-content{
+        gap: 8rem;
+        #login-title{
+            position: relative;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            h1{
+                text-align: center;
+                font-size: 32px;
+            }
+        }
+        #login-input{
+            /* padding-bottom: 60px; */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center;
+            align-items: center; */
+            gap: 2rem;
+            #login-details{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                #login-user, #login-password{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+                #login-user-input, #login-password-input
+                {
+                    padding: 0.2rem;
+                    color: black;
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: 600;
+                }
+            }
+        }
+        #login-buttons{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}
+
+
+@media(min-width: 760px){
+}
+
+@media(min-width: 1584px){
+}
+
+@media(max-width: 760px){
+}
