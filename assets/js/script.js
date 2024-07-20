@@ -1,7 +1,7 @@
 const loginModal = document.querySelector("#login-modal");
 const loginBtn = document.querySelector('#login-button');
-const user = document.querySelector('#login-user-input');
-const pass = document.querySelector('#login-password-input');
+const userEl = document.querySelector('#login-user-input');
+const passEl = document.querySelector('#login-password-input');
 // const username = users[0].username;
 // const password = users[0].password;
 const signInBtn = document.querySelector('#sign-in-button')
@@ -15,16 +15,30 @@ document.addEventListener('click', (event)=>{
 
     // check user login
     if (event.target.matches('#sign-in-button') && event.target.textContent === 'Log in'){
-        const localObj = Object.entries(localStorage);
-        if (String(user.value).toLowerCase() in localObj){
-            const username = String(user.value).toLowerCase();
-            if (pass.value === localObj[username]){
-                console.log('login successful');
-                location.href = './userprofile.html';
-            } else {console.log('password incorrect')}
-        }
-        else {
-            console.log("user does not exist")
+        const user = String(userEl.value).toLowerCase();
+        const pass = String(passEl.value);
+        const submittedLogin = JSON.parse(localStorage.getItem("users"))
+        .map((u)=>{
+            // console.log(Object.values(u).includes(user), user, Object.values(u))
+            if (Object.values(u).includes(user)) return u
+        }).filter((u)=>{
+            return u !== undefined
+        }) || []
+
+        // console.log(submittedLogin[0])
+
+        if (submittedLogin[0]){
+            const username = submittedLogin[0].username;
+            const password = submittedLogin[0].password;
+            if (user === username){
+                if (pass === password){
+                // if (pass === users.indexOf(user)){
+                    console.log('login successful');
+                    location.href = `./userprofile.html#${username}`;
+                } else {console.log('password incorrect')}
+            }
+        } else {
+            console.log(`${user} does not exist`)
         }
     }
 
@@ -33,8 +47,8 @@ document.addEventListener('click', (event)=>{
         const reTypePass = document.querySelector("#login-retype-password-input")
         if (pass.value === reTypePass.value){
             const userLogin = {
-                username : user.value,
-                password : pass.value
+                username : userEl.value,
+                password : passEl.value
             }
             saveLocal(userLogin);
             console.log('user created');
