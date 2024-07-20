@@ -2,8 +2,6 @@ const loginModal = document.querySelector("#login-modal");
 const loginBtn = document.querySelector('#login-button');
 const userEl = document.querySelector('#login-user-input');
 const passEl = document.querySelector('#login-password-input');
-// const username = users[0].username;
-// const password = users[0].password;
 const signInBtn = document.querySelector('#sign-in-button')
 
 document.addEventListener('click', (event)=>{
@@ -17,22 +15,27 @@ document.addEventListener('click', (event)=>{
     if (event.target.matches('#sign-in-button') && event.target.textContent === 'Log in'){
         const user = String(userEl.value).toLowerCase();
         const pass = String(passEl.value);
+        console.log("user:", user)
+        console.log("pass:", pass)
         const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
         ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
-            // console.log(Object.values(u).includes(user), user, Object.values(u))
-            if (Object.values(u).includes(user)) return u
+            console.log(Object.values(u).includes(user), u, Object.values(u))
+            if (Object.keys(u).includes("currentUser")
+                || Object.values(u).includes(user)) return u
         }).filter((u)=>{
+            console.log(u)
             return u !== undefined
         }) : []
 
-        // console.log(submittedLogin[0])
+        console.log(submittedLogin)
 
-        if (submittedLogin[0]){
-            const username = submittedLogin[0].username;
-            const password = submittedLogin[0].password;
+        if (submittedLogin[1]){
+            const username = submittedLogin[1].username;
+            const password = submittedLogin[1].password;
             if (user === username){
                 if (pass === password){
-                    saveLocal(submittedLogin[0], false)
+                    saveLocal(submittedLogin[1], false)
+                    // loadProfile(`${window.location.href}#${username}`)
                     location.href = `./userprofile.html#${username}`;
                     console.log('login successful');
                 } else {console.log('password incorrect')}
@@ -63,6 +66,7 @@ document.addEventListener('click', (event)=>{
                     }
                     saveLocal(userLogin, true);
                     console.log(`user: ${user} created`);
+                    // loadProfile(`${window.location.href}#${userLogin.username}`)
                     location.href = `./userprofile.html#${userLogin.username}`;
                 } else {console.log('passwords do not match')}
             } else {console.log(`user: ${user} already exists`)}
@@ -98,14 +102,19 @@ function saveLocal(user, push){
 
 function loadProfile(href){
     const index = href.indexOf('#');
+    const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser
+    console.log("load profile", currentUser)
     const user = href.slice(index+1) !== href 
     ? href.slice(index+1)
     : '';
-    if (!user){
+    // if (!user){
+    if(currentUser !== user || currentUser === ''){
         location.href = "./login.html"
+    } 
+    else {
+        console.log(user);
+        const profileName = document.querySelector("#real-name");
+        profileName.textContent = user.slice(0, 1).toUpperCase() 
+        + user.slice(1);
     }
-    console.log(user);
-    const profileName = document.querySelector("#real-name");
-    profileName.textContent = user.slice(0, 1).toUpperCase() 
-    + user.slice(1);
 }
