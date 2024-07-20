@@ -17,13 +17,13 @@ document.addEventListener('click', (event)=>{
     if (event.target.matches('#sign-in-button') && event.target.textContent === 'Log in'){
         const user = String(userEl.value).toLowerCase();
         const pass = String(passEl.value);
-        const submittedLogin = JSON.parse(localStorage.getItem("users")) ? 
-            submittedLogin = JSON.parse(localStorage.getItem("users")).map((u)=>{
-                // console.log(Object.values(u).includes(user), user, Object.values(u))
-                if (Object.values(u).includes(user)) return u
-            }).filter((u)=>{
-                return u !== undefined
-            }) : []
+        const submittedLogin = JSON.parse(localStorage.getItem("users")) 
+        ? JSON.parse(localStorage.getItem("users")).map((u)=>{
+            // console.log(Object.values(u).includes(user), user, Object.values(u))
+            if (Object.values(u).includes(user)) return u
+        }).filter((u)=>{
+            return u !== undefined
+        }) : []
 
         // console.log(submittedLogin[0])
 
@@ -48,8 +48,8 @@ document.addEventListener('click', (event)=>{
         const pass = String(passEl.value);
         const reTypePass = String(document.querySelector("#login-retype-password-input").value)
         if (user){
-            const submittedLogin = JSON.parse(localStorage.getItem("users")) ? 
-            submittedLogin = JSON.parse(localStorage.getItem("users")).map((u)=>{
+            const submittedLogin = JSON.parse(localStorage.getItem("users")) 
+            ? JSON.parse(localStorage.getItem("users")).map((u)=>{
                 // console.log(Object.values(u).includes(user), user, Object.values(u))
                 if (Object.values(u).includes(user)) return u
             }).filter((u)=>{
@@ -87,7 +87,16 @@ document.addEventListener('keydown', (event)=>{
 })
 
 function saveLocal(user){
-    const users = JSON.parse(localStorage.getItem("users")) || []
-    users.push(user)
-    localStorage.setItem("users", JSON.stringify(users))
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    users.push(user);
+    localStorage.setItem("users", JSON.stringify(users));
+}
+
+function loadProfile(href){
+    const index = href.indexOf('#');
+    const user = href.slice(index+1);
+    console.log(user);
+    const profileName = document.querySelector("#real-name");
+    profileName.textContent = user.slice(0, 1).toUpperCase() 
+    + user.slice(1);
 }
