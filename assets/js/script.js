@@ -35,7 +35,6 @@ document.addEventListener('click', (event)=>{
             if (user === username){
                 if (pass === password){
                     saveLocal(submittedLogin[1], false)
-                    // loadProfile(`${window.location.href}#${username}`)
                     location.href = `./userprofile.html#${username}`;
                     console.log('login successful');
                 } else {console.log('password incorrect')}
@@ -66,7 +65,6 @@ document.addEventListener('click', (event)=>{
                     }
                     saveLocal(userLogin, true);
                     console.log(`user: ${user} created`);
-                    // loadProfile(`${window.location.href}#${userLogin.username}`)
                     location.href = `./userprofile.html#${userLogin.username}`;
                 } else {console.log('passwords do not match')}
             } else {console.log(`user: ${user} already exists`)}
@@ -100,14 +98,13 @@ function saveLocal(user, push){
     localStorage.setItem("CMS_users", JSON.stringify(users));
 }
 
-function loadProfile(href){
+function isProfileLoggedIn(href){
     const index = href.indexOf('#');
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser
     console.log("load profile", currentUser)
     const user = href.slice(index+1) !== href 
     ? href.slice(index+1)
     : '';
-    // if (!user){
     if(currentUser !== user || currentUser === ''){
         location.href = "./login.html"
     } 
