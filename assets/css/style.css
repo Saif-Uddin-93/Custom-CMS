@@ -28,7 +28,8 @@ button{
     cursor: pointer;
     &[type="submit"]{
         font-weight: 600;
-        color: #909296;
+        /* color: #909296; */
+        color: #a6acb7;
         &:hover{
             color: white;
         }
