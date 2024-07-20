@@ -7,11 +7,11 @@ const password = 'pass';
 const signInBtn = document.querySelector('#sign-in-button')
 
 document.addEventListener('click', (event)=>{
-    // open/close login modal
-    if (event.target.matches('#login-button') ||
-        event.target.matches('.close-icon')) {
-        loginModal.classList.toggle('hide-modal');
-    }
+    // // open/close login modal
+    // if (event.target.matches('#login-button') ||
+    //     event.target.matches('.close-icon')) {
+    //     loginModal.classList.toggle('hide-modal');
+    // }
 
     // check user login
     if (event.target.matches('#sign-in-button')){
