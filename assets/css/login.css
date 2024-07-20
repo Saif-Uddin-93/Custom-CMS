@@ -126,7 +126,7 @@ header{
             flex-direction: column;
             gap: 10px;
             & button{
-                background-color: #7e2864;
+                background-color: #842969;
                 width: 250px;
                 height: 1.5rem;
                 border-radius: 5px;
