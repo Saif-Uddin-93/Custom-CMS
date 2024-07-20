@@ -17,8 +17,8 @@ document.addEventListener('click', (event)=>{
     if (event.target.matches('#sign-in-button') && event.target.textContent === 'Log in'){
         const user = String(userEl.value).toLowerCase();
         const pass = String(passEl.value);
-        const submittedLogin = JSON.parse(localStorage.getItem("users")) 
-        ? JSON.parse(localStorage.getItem("users")).map((u)=>{
+        const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
+        ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
             // console.log(Object.values(u).includes(user), user, Object.values(u))
             if (Object.values(u).includes(user)) return u
         }).filter((u)=>{
@@ -32,9 +32,9 @@ document.addEventListener('click', (event)=>{
             const password = submittedLogin[0].password;
             if (user === username){
                 if (pass === password){
-                // if (pass === users.indexOf(user)){
-                    console.log('login successful');
+                    saveLocal(submittedLogin[0], false)
                     location.href = `./userprofile.html#${username}`;
+                    console.log('login successful');
                 } else {console.log('password incorrect')}
             }
         } else {
@@ -48,8 +48,8 @@ document.addEventListener('click', (event)=>{
         const pass = String(passEl.value);
         const reTypePass = String(document.querySelector("#login-retype-password-input").value)
         if (user){
-            const submittedLogin = JSON.parse(localStorage.getItem("users")) 
-            ? JSON.parse(localStorage.getItem("users")).map((u)=>{
+            const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
+            ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
                 // console.log(Object.values(u).includes(user), user, Object.values(u))
                 if (Object.values(u).includes(user)) return u
             }).filter((u)=>{
@@ -61,7 +61,7 @@ document.addEventListener('click', (event)=>{
                         username : user,
                         password : pass
                     }
-                    saveLocal(userLogin);
+                    saveLocal(userLogin, true);
                     console.log(`user: ${user} created`);
                     location.href = `./userprofile.html#${userLogin.username}`;
                 } else {console.log('passwords do not match')}
@@ -70,6 +70,7 @@ document.addEventListener('click', (event)=>{
     }
 
     if (event.target.matches('#log-out')){
+        saveLocal({username:''}, false)
         location.href = './index.html'
     }
 
@@ -86,15 +87,23 @@ document.addEventListener('keydown', (event)=>{
     }
 })
 
-function saveLocal(user){
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    users.push(user);
-    localStorage.setItem("users", JSON.stringify(users));
+function saveLocal(user, push){
+    const users = JSON.parse(localStorage.getItem("CMS_users")) || [{currentUser:''}];
+    users[0] = {currentUser:user.username};
+    console.log("current user:", user.username);
+    // console.log(users);
+    if(push) users.push(user);
+    localStorage.setItem("CMS_users", JSON.stringify(users));
 }
 
 function loadProfile(href){
     const index = href.indexOf('#');
-    const user = href.slice(index+1);
+    const user = href.slice(index+1) !== href 
+    ? href.slice(index+1)
+    : '';
+    if (!user){
+        location.href = "./login.html"
+    }
     console.log(user);
     const profileName = document.querySelector("#real-name");
     profileName.textContent = user.slice(0, 1).toUpperCase() 
