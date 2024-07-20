@@ -44,16 +44,29 @@ document.addEventListener('click', (event)=>{
 
     // add new user
     if (event.target.matches('#sign-in-button') && event.target.textContent === 'Sign up'){
-        const reTypePass = document.querySelector("#login-retype-password-input")
-        if (pass.value === reTypePass.value){
-            const userLogin = {
-                username : userEl.value,
-                password : passEl.value
-            }
-            saveLocal(userLogin);
-            console.log('user created');
-            location.href = `./userprofile.html#${userLogin.username}`;
-        } else {console.log('passwords do not match')}
+        const user = String(userEl.value).toLowerCase();
+        const pass = String(passEl.value);
+        const reTypePass = String(document.querySelector("#login-retype-password-input").value)
+        if (user){
+            const submittedLogin = JSON.parse(localStorage.getItem("users"))
+            .map((u)=>{
+                // console.log(Object.values(u).includes(user), user, Object.values(u))
+                if (Object.values(u).includes(user)) return u
+            }).filter((u)=>{
+                return u !== undefined
+            }) || []
+            if (!submittedLogin[0]) {
+                if (pass === reTypePass){
+                    const userLogin = {
+                        username : user,
+                        password : pass
+                    }
+                    saveLocal(userLogin);
+                    console.log(`user: ${user} created`);
+                    location.href = `./userprofile.html#${userLogin.username}`;
+                } else {console.log('passwords do not match')}
+            } else {console.log(`user: ${user} already exists`)}
+        } else {console.log('enter a username')}
     }
 
     if (event.target.matches('#log-out')){
