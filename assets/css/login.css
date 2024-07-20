@@ -44,14 +44,13 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 2rem; */
     height: 720px;
     width: 100%;
+    filter: drop-shadow(0 0 0.75rem rgb(5, 5, 5));
     #login-wrapper{
         padding-left: 170px;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         gap: 5rem;
     }
     #cms-info, #login-main-content{
@@ -59,10 +58,7 @@ header{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* align-items: center; */
         background-color: #2f323978;
-        /* border: 3px solid #101517; */
-        /* border-radius: 25px; */
         height: 67%;
         min-height: 660px;
     }
@@ -72,6 +68,9 @@ header{
         background-color: #101517;
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
+        border-left: 8px solid #31333a;
+        border-bottom: 8px solid #31333a;
+        border-top: 8px solid #31333a;
         .info{
             width: 66%;
             text-align: center;
@@ -82,6 +81,9 @@ header{
         width: 40%;
         border-top-right-radius: 25px;
         border-bottom-right-radius: 25px;
+        border-right: 8px solid #31333a;
+        border-bottom: 8px solid #31333a;
+        border-top: 8px solid #31333a;
         #login-title{
             display: flex;
             flex-direction: column;
@@ -95,12 +97,9 @@ header{
             }
         }
         #login-input{
-            /* padding-bottom: 60px; */
             position: relative;
             display: flex;
             flex-direction: column;
-            /* justify-content: center;
-            align-items: center; */
             gap: 2.5rem;
             #login-details{
                 display: flex;

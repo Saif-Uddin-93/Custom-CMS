@@ -14,7 +14,7 @@ document.addEventListener('click', (event)=>{
     // }
 
     // check user login
-    if (event.target.matches('#sign-in-button')){
+    if (event.target.matches('#sign-in-button') && event.target.textContent === 'Log in'){
         if (String(user.value).toLowerCase() === username && pass.value === password){
             console.log('login successful');
             location.href = './userprofile.html';
