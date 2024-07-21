@@ -19,9 +19,11 @@ document.addEventListener('click', (event)=>{
         console.log("pass:", pass)
         const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
         ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
-            console.log(Object.values(u).includes(user), u, Object.values(u))
-            if (Object.keys(u).includes("currentUser")
-                || Object.values(u).includes(user)) return u
+            // console.log(Object.values(u).includes(user), u, Object.values(u))
+            // if (Object.keys(u).includes("currentUser")
+            //     || Object.values(u).includes(user)) return u
+            return u.username === user /* || Object.keys(u).includes("currentUser") */
+            ? u : undefined
         }).filter((u)=>{
             console.log(u)
             return u !== undefined
@@ -29,12 +31,12 @@ document.addEventListener('click', (event)=>{
 
         console.log(submittedLogin)
 
-        if (submittedLogin[1]){
-            const username = submittedLogin[1].username;
-            const password = submittedLogin[1].password;
+        if (submittedLogin[0]){
+            const username = submittedLogin[0].username;
+            const password = submittedLogin[0].password;
             if (user === username){
                 if (pass === password){
-                    saveLocal(submittedLogin[1], false)
+                    saveLocal(submittedLogin[0], false)
                     location.href = `./userprofile.html#${username}`;
                     console.log('login successful');
                 } else {console.log('password incorrect')}
@@ -53,7 +55,8 @@ document.addEventListener('click', (event)=>{
             const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
             ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
                 // console.log(Object.values(u).includes(user), user, Object.values(u))
-                if (Object.values(u).includes(user)) return u
+                // if (Object.values(u).includes(user)) return u
+                return u.username === user ? u : undefined
             }).filter((u)=>{
                 return u !== undefined
             }) : []
@@ -73,7 +76,7 @@ document.addEventListener('click', (event)=>{
 
     if (event.target.matches('#log-out')){
         saveLocal({username:''}, false)
-        location.href = './index.html'
+        location.href = './login.html'
     }
 
     // create new user
@@ -98,6 +101,7 @@ function saveLocal(user, push){
     localStorage.setItem("CMS_users", JSON.stringify(users));
 }
 
+// runs onload from body tag
 function isProfileLoggedIn(href){
     const index = href.indexOf('#');
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser
