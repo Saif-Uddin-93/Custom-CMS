@@ -15,32 +15,26 @@ document.addEventListener('click', (event)=>{
     if (event.target.matches('#sign-in-button') && event.target.textContent === 'Log in'){
         const user = String(userEl.value).toLowerCase();
         const pass = String(passEl.value);
-        console.log("user:", user)
-        console.log("pass:", pass)
+        // console.log("user:", user)
+        // console.log("pass:", pass)
         const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
         ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
             // console.log(Object.values(u).includes(user), u, Object.values(u))
-            // if (Object.keys(u).includes("currentUser")
-            //     || Object.values(u).includes(user)) return u
-            return u.username === user /* || Object.keys(u).includes("currentUser") */
-            ? u : undefined
+            return u.username === user ? u : undefined
         }).filter((u)=>{
-            console.log(u)
+            //console.log(u)
             return u !== undefined
         }) : []
 
-        console.log(submittedLogin)
+        // console.log(submittedLogin)
 
-        if (submittedLogin[0]){
-            const username = submittedLogin[0].username;
+        if (submittedLogin[0]) {
             const password = submittedLogin[0].password;
-            if (user === username){
-                if (pass === password){
-                    saveLocal(submittedLogin[0], false)
-                    location.href = `./userprofile.html#${username}`;
-                    console.log('login successful');
-                } else {console.log('password incorrect')}
-            }
+            if (pass === password){
+                saveLocal(submittedLogin[0], false)
+                location.href = `./userprofile.html#${user}`;
+                console.log('login successful');
+            } else {console.log('password incorrect')}
         } else {
             console.log(`${user} does not exist`)
         }
@@ -55,7 +49,6 @@ document.addEventListener('click', (event)=>{
             const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
             ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
                 // console.log(Object.values(u).includes(user), user, Object.values(u))
-                // if (Object.values(u).includes(user)) return u
                 return u.username === user ? u : undefined
             }).filter((u)=>{
                 return u !== undefined
