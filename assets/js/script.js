@@ -121,8 +121,8 @@ document.addEventListener('click', (event)=>{
     }
 })
 
-// close login modal on escape key press
 document.addEventListener('keydown', (event)=>{
+    // log in/sign up submission using enter key
     if (event.key === "Enter"){
         if (location.href.includes("login.html")){
             checkUserLogin();
@@ -132,6 +132,7 @@ document.addEventListener('keydown', (event)=>{
         }
     }
 
+    // close login modal on escape key press
     // if (event.key === "Escape" && !loginModal.className.includes('hide-modal')) {
     //     loginModal.classList.toggle('hide-modal')
     // }
