@@ -79,9 +79,7 @@ function isProfileLoggedIn(href){
     const index = href.indexOf('#');
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser
     console.log("load profile", currentUser)
-    const user = href.slice(index+1) !== href 
-    ? href.slice(index+1)
-    : '';
+    const user = href.slice(index+1)
     if(currentUser !== user || currentUser === ''){
         location.href = "./login.html"
     } 
