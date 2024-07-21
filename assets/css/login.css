@@ -126,16 +126,24 @@ header{
                     width: 15rem;
                 }
             }
-        }
-        #login-buttons{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            & button{
-                background-color: #842969;
-                width: 250px;
-                height: 1.5rem;
-                border-radius: 5px;
+            #login-buttons{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                & button{
+                    background-color: #842969;
+                    width: 250px;
+                    height: 1.5rem;
+                    border-radius: 5px;
+                    &[type="submit"]{
+                        font-weight: 600;
+                        /* color: #909296; */
+                        color: #b1b7c3;
+                        &:hover{
+                            color: white;
+                        }
+                    }
+                }
             }
         }
     }
