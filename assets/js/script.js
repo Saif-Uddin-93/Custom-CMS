@@ -2,7 +2,8 @@ const loginModal = document.querySelector("#login-modal");
 const loginBtn = document.querySelector('#login-button');
 const userEl = document.querySelector('#login-user-input');
 const passEl = document.querySelector('#login-password-input');
-const signInBtn = document.querySelector('#sign-in-button')
+const signInBtn = document.querySelector('#sign-in-button');
+const loginError = document.querySelector(".login-error");
 
 function checkUserLogin(){
     const user = String(userEl.value).toLowerCase();
@@ -17,16 +18,17 @@ function checkUserLogin(){
     }) : []
 
     // console.log(submittedLogin)
-
+    Timer.timeoutClr();
     if (submittedLogin[0]) {
         const password = submittedLogin[0].password;
         if (pass === password){
             saveLocal(submittedLogin[0], false)
             location.href = `./userprofile.html#${user}`;
             console.log('login successful');
-        } else {console.log('password incorrect')}
+        } else {loginErrorMsg('password incorrect')}
     } else {
-        console.log(`${user} does not exist`)
+        if (user === '') loginErrorMsg(`Enter a username`)
+        else loginErrorMsg(`${user} does not exist`)
     }
 }
 
@@ -34,6 +36,7 @@ function addNewUser(){
     const user = String(userEl.value).toLowerCase();
     const pass = String(passEl.value);
     const reTypePass = String(document.querySelector("#login-retype-password-input").value)
+    Timer.timeoutClr();
     if (user){
         const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
         ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
@@ -51,9 +54,15 @@ function addNewUser(){
                 saveLocal(userLogin, true);
                 console.log(`user: ${user} created`);
                 location.href = `./userprofile.html#${userLogin.username}`;
-            } else {console.log('passwords do not match')}
-        } else {console.log(`user: ${user} already exists`)}
-    } else {console.log('enter a username')}
+            } else {
+                loginErrorMsg('Passwords do not match');
+            }
+        } else {
+            loginErrorMsg(`user: ${user} already exists`);
+        }
+    } else {
+        loginErrorMsg('enter a username');
+    }
 }
 
 function logOut(){
@@ -139,3 +148,20 @@ document.addEventListener('keydown', (event)=>{
     //     loginModal.classList.toggle('hide-modal')
     // }
 })
+
+const Timer = {
+    timerInterval: undefined,
+    timeoutInterval: undefined,
+    timeoutSet: (callBack, ms=1)=> Timer.timeoutInterval = setTimeout(callBack, ms*1000),
+    timeoutClr: ()=> clearTimeout(Timer.timeoutInterval),
+}
+
+function loginErrorMsg(msg=''){
+    loginError.classList.toggle('hide')
+    console.log(msg)
+    loginError.textContent = msg;
+    Timer.timeoutSet(()=>{
+        loginError.classList.toggle('hide')
+        loginError.textContent = '';
+    },2)
+}

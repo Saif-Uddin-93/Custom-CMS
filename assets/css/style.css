@@ -157,11 +157,14 @@ aside{
     }
 }
 
-.hide-modal{
+.hide{
     transition: 1s;
     opacity: 0;
     display: none;
+    z-index: -1;
 }
+
+
 
 #login-modal-bg{
     height: 100vh;
