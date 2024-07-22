@@ -121,7 +121,11 @@ document.addEventListener('click', (event)=>{
 
 document.addEventListener('keydown', (event)=>{
     // log in/sign up submission using enter key
-    if (event.key === "Enter"){
+    active = document.activeElement.id;
+    // console.log(active, typeof active)
+    if (event.key === "Enter" && (active === "login-user-input" 
+        || active === "login-password-input" 
+        || active === "login-retype-password-input")){
         if (location.href.includes("login.html")){
             checkUserLogin();
         }
