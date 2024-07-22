@@ -126,6 +126,7 @@ aside{
         a, button{
             /* active bg colour when active
             background-color: #4c70ae; */
+            width: 100%;
             padding: 0.5rem 1rem;
             display: flex;
             flex-direction: row;
@@ -140,6 +141,13 @@ aside{
             }
         }
         .tab-content{
+            transition: height 0.5s cubic-bezier(1, 0.63, 0.25, 1.5);
+            overflow: hidden;
+            height: 0px;
+            &.show{
+                height: 200px;
+                /* mask-image: none; */
+            }
             .tab-content-item{
                 background-color: #2f3239;
                 color: #909296;

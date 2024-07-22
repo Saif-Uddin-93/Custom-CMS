@@ -74,6 +74,11 @@ function userSignUpPage(){
     location.href = './create_new_user.html';
 }
 
+function openPosts(){
+    const postsTab = document.querySelector(".tab-content");
+    postsTab.classList.toggle("show")
+}
+
 function saveLocal(user, push){
     const users = JSON.parse(localStorage.getItem("CMS_users")) || [{currentUser:''}];
     users[0] = {currentUser:user.username};
@@ -117,7 +122,7 @@ document.addEventListener('click', (event)=>{
         addNewUser();
     }
 
-    //logout
+    // logout
     if (event.target.matches('#log-out')){
         logOut();
     }
@@ -125,6 +130,11 @@ document.addEventListener('click', (event)=>{
     // load user sign up
     if (event.target.matches('#new-user-button')){
         userSignUpPage();
+    }
+
+    // clicked on posts tab
+    if(event.target.matches("#posts-button *") || event.target.matches("#posts-button")){
+        openPosts();
     }
 })
 
