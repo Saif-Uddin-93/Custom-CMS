@@ -6,7 +6,7 @@
     <title>CMS</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body onload="isProfileLoggedIn(window.location.href)">
     <div id="body-wrapper">
         <header>
             <div id="header-wrapper">
@@ -16,15 +16,15 @@
                 </div>
                 <div id="top-nav">
                     <div id="login-button-wrapper">
-                        <button id="login-button" onclick="location.href='login.html'"><span>Login</span></button>
+                        <button id="login-button" onclick="location.href='userprofile.html'"><span>Login</span></button>
                     </div>
                 </div>
             </div>
         </header>
         <main>
             <div id="main-wrapper">
-                <aside class="show">
-                    <div id="aside-wrapper" class="show">
+                <aside>
+                    <div id="aside-wrapper">
                         <div id="tabs">
                             <div class="tab">
                                 <a id="dashboard-link" href="#">
