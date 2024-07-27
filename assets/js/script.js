@@ -67,9 +67,11 @@ function addNewUser(){
 }
 
 function logInSuccess(user){
+    console.log('login successful');
     // location.href = `./userprofile.html#${user}`;
     location.href = `./application_dashboard.html`
-    console.log('login successful');
+    // const loginBtnTxt = document.querySelector("#login-button span");
+    // loginBtnTxt.value = user;
 }
 
 function logOut(){
@@ -132,18 +134,20 @@ function saveLocal(user, push){
 
 // runs onload from body tag
 function isProfileLoggedIn(href){
-    const index = href.indexOf('#');
+    // const index = href.indexOf('#');
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser
     console.log("load profile", currentUser)
-    const user = href.slice(index+1)
-    if(currentUser !== user || currentUser === ''){
+    // const user = href.slice(index+1)
+    // if(currentUser !== user || currentUser === ''){
+    //     location.href = "./login.html"
+    // } 
+    if(currentUser === ''){
         location.href = "./login.html"
     } 
     else {
-        console.log(user);
         const profileName = document.querySelector("#real-name");
-        profileName.textContent = user.slice(0, 1).toUpperCase() 
-        + user.slice(1);
+        profileName.textContent = currentUser.slice(0, 1).toUpperCase() 
+        + currentUser.slice(1);
     }
 }
 
