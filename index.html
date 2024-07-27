@@ -16,15 +16,15 @@
                 </div>
                 <div id="top-nav">
                     <div id="login-button-wrapper">
-                        <button id="login-button" onclick="location.href='login.html'">Login</button>
+                        <button id="login-button" onclick="location.href='login.html'"><span>Login</span></button>
                     </div>
                 </div>
             </div>
         </header>
         <main>
             <div id="main-wrapper">
-                <aside>
-                    <div id="aside-wrapper">
+                <aside class="show">
+                    <div id="aside-wrapper" class="show">
                         <div id="tabs">
                             <div class="tab">
                                 <a id="dashboard-link" href="#">
@@ -62,6 +62,11 @@
                                     </a>
                                 </div>
                             </div>
+                        </div>
+                        <div id="sidebar-icon-wrapper">
+                            <button id="sidebar-button">
+                                <img src="./assets/images/sidebar-panel-expand-icon-close.svg" alt="sidebar-open button">
+                            </button>
                         </div>
                     </div>
                 </aside>

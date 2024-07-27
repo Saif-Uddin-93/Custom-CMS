@@ -23,8 +23,8 @@ function checkUserLogin(){
         const password = submittedLogin[0].password;
         if (pass === password){
             saveLocal(submittedLogin[0], false)
-            location.href = `./userprofile.html#${user}`;
-            console.log('login successful');
+            // login success
+            logInSuccess(user)
         } else {loginErrorMsg('password incorrect')}
     } else {
         if (user === '') loginErrorMsg(`Enter a username`)
@@ -53,7 +53,8 @@ function addNewUser(){
                 }
                 saveLocal(userLogin, true);
                 console.log(`user: ${user} created`);
-                location.href = `./userprofile.html#${userLogin.username}`;
+                // login success
+                logInSuccess(user)
             } else {
                 loginErrorMsg('Passwords do not match');
             }
@@ -65,18 +66,59 @@ function addNewUser(){
     }
 }
 
+function logInSuccess(user){
+    // location.href = `./userprofile.html#${user}`;
+    location.href = `./application_dashboard.html`
+    console.log('login successful');
+}
+
 function logOut(){
     saveLocal({username:''}, false)
-    location.href = './login.html'
+    location.href = './index.html'
 }
 
 function userSignUpPage(){
     location.href = './create_new_user.html';
 }
 
-function openPosts(){
+function openPosts(open){
     const postsTab = document.querySelector(".tab-content");
-    postsTab.classList.toggle("show")
+    if (!open){
+        postsTab.classList.toggle("show")
+        const aside = document.querySelector("aside")
+        if (aside.classList[0]==='minimise'){
+            openSideBar()
+        }
+    }
+    else if (open === 'open'){
+        postsTab.classList.add("show")
+        openSideBar()
+    }
+    else if (open === 'close'){
+        postsTab.classList.remove("show")
+    }
+}
+
+function openSideBar(){
+    const aside = document.querySelector("aside"),
+    asideWrapper = document.querySelector("#aside-wrapper"),
+    tabNames = document.querySelectorAll(".tab-name"),
+    sideBarBtnImg = document.querySelector("#sidebar-button img");
+    // tabItems = document.querySelectorAll(".tab-content-item");
+    aside.classList.toggle("minimise")
+    asideWrapper.classList.toggle("minimise")
+    tabNames.forEach((tab)=>{
+        tab.classList.toggle("hide")
+    })    
+    if(aside.classList[0]==="minimise"){
+        sideBarBtnImg.src="./assets/images/sidebar-panel-expand-icon-open.svg"
+        sideBarBtnImg.alt="sidebar-open button"
+        openPosts('close')
+    }
+    else{
+        sideBarBtnImg.src="./assets/images/sidebar-panel-expand-icon-close.svg"
+        sideBarBtnImg.alt="sidebar-close button"
+    }
 }
 
 function saveLocal(user, push){
@@ -118,23 +160,27 @@ document.addEventListener('click', (event)=>{
     }
 
     // add new user
-    if (event.target.matches('#sign-in-button') && event.target.textContent === 'Sign up'){
+    else if (event.target.matches('#sign-in-button') && event.target.textContent === 'Sign up'){
         addNewUser();
     }
 
     // logout
-    if (event.target.matches('#log-out')){
+    else if (event.target.matches('#log-out')){
         logOut();
     }
 
     // load user sign up
-    if (event.target.matches('#new-user-button')){
+    else if (event.target.matches('#new-user-button')){
         userSignUpPage();
     }
 
     // clicked on posts tab
-    if(event.target.matches("#posts-button *") || event.target.matches("#posts-button")){
+    else if(event.target.matches("#posts-button *") || event.target.matches("#posts-button")){
         openPosts();
+    }
+
+    else if(event.target.matches("#sidebar-button *") || event.target.matches("#sidebar-button")){
+        openSideBar();
     }
 })
 
@@ -148,7 +194,7 @@ document.addEventListener('keydown', (event)=>{
         if (location.href.includes("login.html")){
             checkUserLogin();
         }
-        if (location.href.includes("create_new_user.html")){
+        else if (location.href.includes("create_new_user.html")){
             addNewUser();
         }
     }

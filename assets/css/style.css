@@ -102,12 +102,49 @@ header{
             display: flex;
             justify-content: center;
             align-items: center;
+            #login-button{
+                position: relative;
+                background-color: #242e33;
+                padding: 0.5rem 1rem;
+                border-radius: 9px;
+                width: 60px;
+                height: 25px;
+                span{
+                    position: absolute;
+                    top: 15%;
+                    left: 21%;
+                }
+                &:hover{
+                    background-color: #3a4a54;
+                    & * {
+                        font-weight: 600;
+                        left: 19%;
+                    }
+                }
+            }
         }
     }
 }
 
 aside, #aside-wrapper{
+    /* width: var(--aside-width); */
+    position: relative;
+    transition: width 0.5s;
+    height: 100vh;
+    background-color: #101517;
     width: var(--aside-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &.minimise{
+        transition: width 0.5s; /*cubic-bezier(1, 0.63, 0.25, 1.5);*/
+        /* overflow: hidden; */
+        width: 62px;
+        #sidebar-icon-wrapper{
+            transition: left 0.5s;
+            left: 0.1rem;
+        }
+    }
 }
 aside{
     position: sticky;
@@ -118,15 +155,15 @@ aside{
 #tabs{
     display: flex;
     flex-direction: column;
-    height: 977px;
-    min-height: 720px;
-    /* width: var(--aside-width); */
-    background-color: #101517;
+    padding-bottom: 2rem;
     .tab{
+        button{
+            width: 100%;
+        }
         a, button{
             /* active bg colour when active
             background-color: #4c70ae; */
-            width: 100%;
+            /* width: 100%; */
             padding: 0.5rem 1rem;
             display: flex;
             flex-direction: row;
@@ -134,19 +171,20 @@ aside{
             .tab-icon{
                 height: 20px;
                 width: 34px;
-                padding-right: 10px;
+                padding-right: 15px;
             }
             .tab-name{
+                transition: opacity 2s;
+                opacity: 1;
                 text-align: center;
             }
         }
         .tab-content{
-            transition: height 0.5s cubic-bezier(1, 0.63, 0.25, 1.5);
+            transition: height 0.5s; /* cubic-bezier(1, 0.63, 0.25, 1.5); */
             overflow: hidden;
             height: 0px;
             &.show{
                 height: 200px;
-                /* mask-image: none; */
             }
             .tab-content-item{
                 background-color: #2f3239;
@@ -164,9 +202,21 @@ aside{
         }
     }
 }
+#sidebar-icon-wrapper{
+    position: fixed;
+    bottom: 0;
+    transition: left 0.5s;
+    left: 7rem;
+    display: flex;
+    justify-content: end;
+    #sidebar-button{
+        padding: 1rem;
+        padding-bottom: 1.5rem;
+    }
+}
 
 .hide{
-    transition: 1s;
+    transition: opacity 1s;
     opacity: 0;
     display: none;
     z-index: -1;
