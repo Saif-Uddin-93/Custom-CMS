@@ -6,7 +6,7 @@
     <title>CMS</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body onload="isProfileLoggedIn(window.location.href)">
+<body onload="">
     <div id="body-wrapper">
         <header>
             <div id="header-wrapper">
@@ -16,60 +16,13 @@
                 </div>
                 <div id="top-nav">
                     <div id="login-button-wrapper">
-                        <button id="login-button" onclick="location.href='userprofile.html'"><span>Login</span></button>
+                        <button id="login-button" onclick="location.href='login.html'"><span>Login</span></button>
                     </div>
                 </div>
             </div>
         </header>
         <main>
             <div id="main-wrapper">
-                <aside>
-                    <div id="aside-wrapper">
-                        <div id="tabs">
-                            <div class="tab">
-                                <a id="dashboard-link" href="#">
-                                    <div class="tab-icon-wrapper">
-                                        <img class="tab-icon" src="./assets/images/speedometer-color-icon.svg" alt="dashboard icon">
-                                        <!-- icon source: https://uxwing.com/speedometer-color-icon/ -->
-                                    </div>
-                                    <div class="tab-name">
-                                        Dashboard
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="tab">
-                                <button id="posts-button" href="#">
-                                    <div class="tab-icon-wrapper">
-                                        <img class="tab-icon" src="./assets/images/pin-icon.svg" alt="posts icon">
-                                        <!-- icon source: https://uxwing.com/pin-icon/ -->
-                                    </div>
-                                    <div class="tab-name">
-                                        Posts
-                                    </div>
-                                </button>
-                                <div class="tab-content">
-                                    <a class="tab-content-item" href="#">
-                                        All Posts
-                                    </a>
-                                    <a class="tab-content-item" href="#">
-                                        Add New Post
-                                    </a>
-                                    <a class="tab-content-item" href="#">
-                                        Categories
-                                    </a>
-                                    <a class="tab-content-item" href="#">
-                                        Tags
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="sidebar-icon-wrapper">
-                            <button id="sidebar-button">
-                                <img src="./assets/images/sidebar-panel-expand-icon-close.svg" alt="sidebar-open button">
-                            </button>
-                        </div>
-                    </div>
-                </aside>
                 <!-- <section id="login-modal" class="hide-modal">
                     <div id="login-modal-bg">
                         <div id="login-modal-content">
