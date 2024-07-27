@@ -83,6 +83,10 @@ function userSignUpPage(){
     location.href = './create_new_user.html';
 }
 
+// function loadUserProfile(){
+//     location.href = './userprofile.html';
+// }
+
 function openPosts(open){
     const postsTab = document.querySelector(".tab-content");
     if (!open){
@@ -134,21 +138,25 @@ function saveLocal(user, push){
 
 // runs onload from body tag
 function isProfileLoggedIn(href){
-    // const index = href.indexOf('#');
-    const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser
+    const index =/*  href.indexOf('.io') ||  */href.indexOf('01');
+    let currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
+    currentUser = currentUser.slice(0, 1).toUpperCase() + currentUser.slice(1);
     console.log("load profile", currentUser)
-    // const user = href.slice(index+1)
-    // if(currentUser !== user || currentUser === ''){
-    //     location.href = "./login.html"
-    // } 
+    const page = href.slice(index+2)
+    console.log(page)
     if(currentUser === ''){
         location.href = "./login.html"
-    } 
-    else {
-        const profileName = document.querySelector("#real-name");
-        profileName.textContent = currentUser.slice(0, 1).toUpperCase() 
-        + currentUser.slice(1);
     }
+    if(page === '/application_dashboard.html'){
+        const loginBtnTxt = document.querySelector("#login-button span");
+        loginBtnTxt.textContent = currentUser;
+    }
+    else if (page === '/userprofile.html') {
+        const profileName = document.querySelector("#real-name");
+        profileName.textContent = currentUser;
+        // const loginBtnTxt = document.querySelector("#login-button span");
+        // loginBtnTxt.textContent = profileName.textContent;
+    } 
 }
 
 document.addEventListener('click', (event)=>{

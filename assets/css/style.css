@@ -103,22 +103,32 @@ header{
             justify-content: center;
             align-items: center;
             #login-button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 position: relative;
                 background-color: #242e33;
                 padding: 0.5rem 1rem;
                 border-radius: 9px;
+                /* width: fit-content; */
                 width: 60px;
                 height: 25px;
+                div{
+                    top: -0.5rem;
+                    left: -0.3rem;
+                }
                 span{
                     position: absolute;
-                    top: 15%;
-                    left: 21%;
+                    width: 100%;
+                    text-align: center;
+                    /* top: 15%;
+                    left: 21%; */
                 }
                 &:hover{
                     background-color: #3a4a54;
                     & * {
                         font-weight: 600;
-                        left: 19%;
+                        /* left: 19%; */
                     }
                 }
             }
