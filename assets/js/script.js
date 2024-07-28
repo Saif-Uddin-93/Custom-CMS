@@ -177,7 +177,7 @@ function loadUserProfile(){
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
 
     if (currentUser) location.href = '/userprofile.html'
-    else location.href = '/login.html'
+    else location.href = './login.html'
 }
 
 document.addEventListener('click', (event)=>{
