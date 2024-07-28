@@ -128,7 +128,7 @@ function openSideBar(){
 }
 
 function checkUserDB(){
-    localStorage.setItem('CMS_users', JSON.stringify([{'currentUser':''}]));
+    // localStorage.setItem('CMS_users', JSON.stringify([{'currentUser':''}]));
     saveLocal()
 }
 
@@ -158,10 +158,11 @@ function isProfileLoggedIn(href){
     const page = href.slice(index+2)
     console.log(page)
     if(currentUser === ''){
-        if(page !== '/index.html')location.href = "./login.html"
+        if(page !== '/index.html'){
+            location.href = "./login.html"
+        }
     }
-    else if(loginBtnPages.includes(page)
-    ){
+    else if(loginBtnPages.includes(page)) {
         const loginBtnTxt = document.querySelector("#login-button span");
         loginBtnTxt.textContent = currentUser.slice(0,1);
     }
