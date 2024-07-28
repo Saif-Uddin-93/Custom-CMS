@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/homepage.css">
 </head>
-<body onload="">
+<body onload="isProfileLoggedIn(window.location.href)">
     <div id="body-wrapper">
         <header>
             <div id="header-wrapper">
@@ -17,7 +17,7 @@
                 </div>
                 <div id="top-nav">
                     <div id="login-button-wrapper">
-                        <button id="login-button" onclick="location.href='login.html'"><span>Login</span></button>
+                        <button id="login-button" onclick="loadUserProfile()"><span>Login</span></button>
                     </div>
                 </div>
             </div>

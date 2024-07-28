@@ -136,6 +136,12 @@ function saveLocal(user, push){
     localStorage.setItem("CMS_users", JSON.stringify(users));
 }
 
+const loginBtnPages = [
+    '/application_dashboard.html',
+    '/index.html',
+    '/allposts.html',
+]
+
 // runs onload from body tag
 function isProfileLoggedIn(href){
     const index =/*  href.indexOf('.io') ||  */href.indexOf('01');
@@ -145,9 +151,10 @@ function isProfileLoggedIn(href){
     const page = href.slice(index+2)
     console.log(page)
     if(currentUser === ''){
-        location.href = "./login.html"
+        if(page !== '/index.html')location.href = "/login.html"
     }
-    else if(page === '/application_dashboard.html'){
+    else if(loginBtnPages.includes(page)
+    ){
         const loginBtnTxt = document.querySelector("#login-button span");
         loginBtnTxt.textContent = currentUser.slice(0,1);
     }
@@ -157,6 +164,13 @@ function isProfileLoggedIn(href){
         // const loginBtnTxt = document.querySelector("#login-button span");
         // loginBtnTxt.textContent = profileName.textContent;
     } 
+}
+
+function loadUserProfile(){
+    const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
+
+    if (currentUser) location.href = '/userprofile.html'
+    else location.href = '/login.html'
 }
 
 document.addEventListener('click', (event)=>{
