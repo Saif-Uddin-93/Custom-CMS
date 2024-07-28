@@ -20,15 +20,16 @@
           }
         .table-live-text{
             font-weight: 900;
-            color: transparent;        }
+            color: transparent;        
+        }
+        a{
+            &:hover{
+                text-decoration: underline;
+            }
+        }
     }
 }
 
-a{
-    &:hover{
-        text-decoration: underline;
-    }
-}
 
 .live-green{
     text-shadow: 0 0 0 green;
