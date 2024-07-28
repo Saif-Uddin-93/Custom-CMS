@@ -151,7 +151,7 @@ const loginBtnPages = [
 
 // runs onload from body tag
 function isProfileLoggedIn(href){
-    const index =/*  href.indexOf('.io') ||  */href.indexOf('01');
+    const index = href==='http://127.0.0.1:5501/index.html' ? href.indexOf('01') : href.indexOf('io');
     let currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
     currentUser = currentUser.slice(0, 1).toUpperCase() + currentUser.slice(1);
     console.log("load profile", currentUser)
