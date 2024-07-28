@@ -158,7 +158,7 @@ function isProfileLoggedIn(href){
     const page = href.slice(index+2)
     console.log(page)
     if(currentUser === ''){
-        if(page !== '/index.html')location.href = "/login.html"
+        if(page !== '/index.html')location.href = "./login.html"
     }
     else if(loginBtnPages.includes(page)
     ){
@@ -176,7 +176,7 @@ function isProfileLoggedIn(href){
 function loadUserProfile(){
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
 
-    if (currentUser) location.href = '/userprofile.html'
+    if (currentUser) location.href = './userprofile.html'
     else location.href = './login.html'
 }
 
