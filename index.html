@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/homepage.css">
 </head>
-<body onload="isProfileLoggedIn(window.location.href)">
+<body onload="
+checkUserDB();
+isProfileLoggedIn(window.location.href);
+">
     <div id="body-wrapper">
         <header>
             <div id="header-wrapper">

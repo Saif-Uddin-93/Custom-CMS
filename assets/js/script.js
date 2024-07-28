@@ -127,10 +127,17 @@ function openSideBar(){
     }
 }
 
+function checkUserDB(){
+    localStorage.setItem('CMS_users', JSON.stringify([{'currentUser':''}]));
+    saveLocal()
+}
+
 function saveLocal(user, push){
     const users = JSON.parse(localStorage.getItem("CMS_users")) || [{currentUser:''}];
-    users[0] = {currentUser:user.username};
-    console.log("current user:", user.username);
+    if (user) {
+        users[0] = {currentUser:user.username};
+        console.log("current user:", user.username);
+    }
     // console.log(users);
     if(push) users.push(user);
     localStorage.setItem("CMS_users", JSON.stringify(users));
