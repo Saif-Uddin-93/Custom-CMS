@@ -1,0 +1,11 @@
+#main-wrapper{
+    width: 100%;
+    display: flex;
+    gap: 5rem;
+    padding: 5rem 18rem;
+    #cms-info, #company-info{
+        height: 700px;
+        width: 700px;
+        border: 1px solid black;
+    }
+}

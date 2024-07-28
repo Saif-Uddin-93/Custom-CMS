@@ -147,7 +147,7 @@ function isProfileLoggedIn(href){
     if(currentUser === ''){
         location.href = "./login.html"
     }
-    if(page === '/application_dashboard.html'){
+    else if(page === '/application_dashboard.html'){
         const loginBtnTxt = document.querySelector("#login-button span");
         loginBtnTxt.textContent = currentUser;
     }
