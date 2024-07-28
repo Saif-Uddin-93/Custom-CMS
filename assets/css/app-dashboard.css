@@ -2,13 +2,22 @@
     width: 100%;
     display: flex;
     #recent-pages{
+        margin: 3rem;
+    }
+    #recent-table{
+        margin: 2rem 3rem;
         position: relative;
-        height: 700px;
-        width: 700px;
+        /* height: fit-content;
+        width: fit-content; */
         border: 1px solid black;
         td{
-            padding: 0.5rem;
+            padding: 0.5rem 1rem;
         }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
         .live-text{
             font-weight: 900;
             color: transparent;
