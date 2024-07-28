@@ -90,6 +90,9 @@ header{
         height: 30px;
         min-width: var(--aside-width);
         width: var(--aside-width);
+        &:hover svg path{
+            fill: rgb(51, 135, 218);
+        }
     }
     #top-nav{
         /* position: sticky; */
@@ -137,7 +140,6 @@ header{
 }
 
 aside, #aside-wrapper{
-    /* width: var(--aside-width); */
     position: relative;
     transition: width 0.5s;
     height: 100vh;
@@ -159,7 +161,8 @@ aside, #aside-wrapper{
 aside{
     position: sticky;
     top: 46px;
-    left: 0;
+    left: -1rem;
+    z-index: 1;
 }
 
 #tabs{

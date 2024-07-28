@@ -149,7 +149,7 @@ function isProfileLoggedIn(href){
     }
     else if(page === '/application_dashboard.html'){
         const loginBtnTxt = document.querySelector("#login-button span");
-        loginBtnTxt.textContent = currentUser;
+        loginBtnTxt.textContent = currentUser.slice(0,1);
     }
     else if (page === '/userprofile.html') {
         const profileName = document.querySelector("#real-name");
