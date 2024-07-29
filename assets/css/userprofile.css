@@ -78,4 +78,15 @@ aside{
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
+    max-width: 200px;
+}
+
+#role-description-h2{
+    font-weight: 100;
+}
+
+#role-description-text{
+    padding: 0.5rem;
+    background-color: #c7c7cb;
+    color: #757583;
 }
