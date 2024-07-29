@@ -5,6 +5,10 @@ aside{
     height: 100vh;
 }
 
+#main-wrapper{
+    display: flex;
+}
+
 #aside-wrapper{
     display: flex;
     background-color: #183649;
@@ -64,4 +68,14 @@ aside{
 
 #tabs{
     background-color: #183649;
+}
+
+#userprofile-main-content section{
+    padding: 2rem;
+}
+
+.info-box-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
 }
