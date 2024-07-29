@@ -152,7 +152,7 @@ const loginBtnPages = [
 // runs onload from body tag
 function isProfileLoggedIn(href){
     console.log(href)
-    const index = href.slice(0,10)==='http://127' ? href.indexOf('01') : href.indexOf('io');
+    const index = href.slice(0,10)==='http://127' ? href.indexOf('01') : href.indexOf('MS/');
     console.log(index)
     let currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
     currentUser = currentUser.slice(0, 1).toUpperCase() + currentUser.slice(1);
