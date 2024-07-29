@@ -164,7 +164,7 @@ function isProfileLoggedIn(href){
             location.href = "./login.html"
         }
     }
-    else if(loginBtnPages.includes(page) || href === 'https://saif-uddin-93.github.io/Custom-CMS/') {
+    else if(loginBtnPages.includes(page) || href === 'https://saif-uddin-93.github.io/Custom-CMS/' || href === 'http://127.0.0.1:5501/') {
         const loginBtnTxt = document.querySelector("#login-button span");
         loginBtnTxt.textContent = currentUser.slice(0,1);
     }

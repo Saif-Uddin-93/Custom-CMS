@@ -91,7 +91,7 @@ header{
         min-width: var(--aside-width);
         width: var(--aside-width);
         &:hover svg path{
-            fill: rgb(51, 135, 218);
+            fill: rgb(95, 175, 255);
         }
     }
     #top-nav{
