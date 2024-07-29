@@ -151,7 +151,9 @@ const loginBtnPages = [
 
 // runs onload from body tag
 function isProfileLoggedIn(href){
-    const index = href==='http://127.0.0.1:5501/index.html' ? href.indexOf('01') : href.indexOf('io');
+    console.log(href)
+    const index = href.slice(0,10)==='http://127' ? href.indexOf('01') : href.indexOf('io');
+    console.log(index)
     let currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
     currentUser = currentUser.slice(0, 1).toUpperCase() + currentUser.slice(1);
     console.log("load profile", currentUser)
@@ -167,6 +169,7 @@ function isProfileLoggedIn(href){
         loginBtnTxt.textContent = currentUser.slice(0,1);
     }
     else if (page === '/userprofile.html') {
+        console.log(currentUser, page)
         const profileName = document.querySelector("#real-name");
         profileName.textContent = currentUser;
         // const loginBtnTxt = document.querySelector("#login-button span");
@@ -176,7 +179,7 @@ function isProfileLoggedIn(href){
 
 function loadUserProfile(){
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
-
+    console.log(currentUser)
     if (currentUser) location.href = './userprofile.html'
     else location.href = './login.html'
 }
