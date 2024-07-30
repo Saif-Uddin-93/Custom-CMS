@@ -6,19 +6,25 @@ const signInBtn = document.querySelector('#sign-in-button');
 const loginError = document.querySelector(".login-error");
 
 function checkUserLogin(){
+    // checks user login for valid login
+
+    // user and pass takes input from inputs on login/sign up pages
     const user = String(userEl.value).toLowerCase();
     const pass = String(passEl.value);
+
+    // submittedLogin checks input with stored user data in local storage
+    // returns array with 1 object containing a valid login or and empty array if invalid login
     const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
     ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
         // console.log(Object.values(u).includes(user), u, Object.values(u))
         return u.username === user ? u : undefined
     }).filter((u)=>{
-        //console.log(u)
         return u !== undefined
     }) : []
 
-    // console.log(submittedLogin)
+    // Timer used to control error messages appearing on invalid inputs for login/sign up pages
     Timer.timeoutClr();
+    // if valid login found
     if (submittedLogin[0]) {
         const password = submittedLogin[0].password;
         if (pass === password){
@@ -32,21 +38,26 @@ function checkUserLogin(){
     }
 }
 
+// function to add user when entering a new user
 function addNewUser(){
+    // user and pass takes input from inputs on login/sign up pages
     const user = String(userEl.value).toLowerCase();
     const pass = String(passEl.value);
     const reTypePass = String(document.querySelector("#login-retype-password-input").value)
     Timer.timeoutClr();
+    // checks if a username has been entered
     if (user){
+        // check user database if username already exists
         const submittedLogin = JSON.parse(localStorage.getItem("CMS_users")) 
         ? JSON.parse(localStorage.getItem("CMS_users")).map((u)=>{
-            // console.log(Object.values(u).includes(user), user, Object.values(u))
             return u.username === user ? u : undefined
         }).filter((u)=>{
             return u !== undefined
         }) : []
         if (!submittedLogin[0]) {
+            // if user doesn't exist, check is entered passwords match
             if (pass === reTypePass){
+                // creates a new user as an object which is saved to local storage
                 const userLogin = {
                     username : user,
                     password : pass
@@ -67,11 +78,9 @@ function addNewUser(){
 }
 
 function logInSuccess(user){
+    // function is invoked if login is successful and redirects to application dashboard
     console.log('login successful');
-    // location.href = `./userprofile.html#${user}`;
     location.href = `./application_dashboard.html`
-    // const loginBtnTxt = document.querySelector("#login-button span");
-    // loginBtnTxt.value = user;
 }
 
 function logOut(){
@@ -82,10 +91,6 @@ function logOut(){
 function userSignUpPage(){
     location.href = './create_new_user.html';
 }
-
-// function loadUserProfile(){
-//     location.href = './userprofile.html';
-// }
 
 function openPosts(open){
     const postsTab = document.querySelector(".tab-content");
@@ -106,6 +111,7 @@ function openPosts(open){
 }
 
 function openSideBar(){
+     // funtion to open/close side bar menu
     const aside = document.querySelector("aside"),
     asideWrapper = document.querySelector("#aside-wrapper"),
     tabNames = document.querySelectorAll(".tab-name"),
@@ -127,10 +133,10 @@ function openSideBar(){
     }
 }
 
-function checkUserDB(){
-    // localStorage.setItem('CMS_users', JSON.stringify([{'currentUser':''}]));
-    saveLocal()
-}
+// function checkUserDB(){
+//     // localStorage.setItem('CMS_users', JSON.stringify([{'currentUser':''}]));
+//     saveLocal()
+// }
 
 function saveLocal(user, push){
     const users = JSON.parse(localStorage.getItem("CMS_users")) || [{currentUser:''}];
@@ -143,22 +149,27 @@ function saveLocal(user, push){
     localStorage.setItem("CMS_users", JSON.stringify(users));
 }
 
+// array of pages that include the login button in the nav bar in header
 const loginBtnPages = [
     '/application_dashboard.html',
     '/index.html',
     '/allposts.html',
 ]
 
-// runs onload from body tag
+// runs onload from body tag. if the user is not logged in then redirect to login page.
 function isProfileLoggedIn(href){
     console.log(href)
+    // index checks if webpage running in local test environment or live github pages environment
     let index = href.slice(0,10)==='http://127' ? href.indexOf('01') : href.indexOf('MS/');
     console.log(index)
+    // currentUser checks which user currently logged in or returns '' if no-one logged in.
     let currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
     currentUser = currentUser.slice(0, 1).toUpperCase() + currentUser.slice(1);
     console.log("load profile", currentUser)
+    // page checks which webpage currently on
     const page = href.slice(index+2)
     console.log(page)
+    // redirect if no-one logged in
     if(currentUser === ''){
         if(page !== '/index.html' && href !== 'https://saif-uddin-93.github.io/Custom-CMS/'){
             location.href = "./login.html"
@@ -172,16 +183,7 @@ function isProfileLoggedIn(href){
         console.log(currentUser, page)
         const profileName = document.querySelector("#real-name");
         profileName.textContent = currentUser;
-        // const loginBtnTxt = document.querySelector("#login-button span");
-        // loginBtnTxt.textContent = profileName.textContent;
     } 
-}
-
-function loadUserProfile(){
-    const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
-    console.log(currentUser)
-    if (currentUser) location.href = './userprofile.html'
-    else location.href = './login.html'
 }
 
 document.addEventListener('click', (event)=>{
@@ -242,6 +244,7 @@ document.addEventListener('keydown', (event)=>{
     // }
 })
 
+// Timer object to simplify setTimeout/clearTimeout functions
 const Timer = {
     timerInterval: undefined,
     timeoutInterval: undefined,
@@ -249,6 +252,7 @@ const Timer = {
     timeoutClr: ()=> clearTimeout(Timer.timeoutInterval),
 }
 
+// function to display error messages on login/sign up pages
 function loginErrorMsg(msg=''){
     loginError.classList.toggle('hide')
     console.log(msg)
