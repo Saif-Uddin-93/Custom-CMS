@@ -244,6 +244,13 @@ document.addEventListener('keydown', (event)=>{
     // }
 })
 
+function loadUserProfile(){
+    const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
+    console.log(currentUser)
+    if (currentUser) location.href = './userprofile.html'
+    else location.href = './login.html'
+}
+
 // Timer object to simplify setTimeout/clearTimeout functions
 const Timer = {
     timerInterval: undefined,
