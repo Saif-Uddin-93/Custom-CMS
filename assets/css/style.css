@@ -211,6 +211,9 @@ aside{
     flex-direction: column;
     padding-bottom: 2rem;
     .tab{
+        &:first-child{
+            padding-top: 0.3rem;
+        }
         button{
             width: 100%;
         }
@@ -241,7 +244,7 @@ aside{
                 height: 200px;
             }
             .tab-content-item{
-                background-color: #2f3239;
+                background-color: #244860;
                 color: #909296;
                 font-size: 13.5px;
                 padding: 1rem 0;
