@@ -27,13 +27,35 @@ a{
     justify-content: end;
 }
 
+.center-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .button-class{
+    position: relative;
     background-color: rgb(23, 32, 38);
     margin: 0.5rem;
-    padding: 0.3rem 0.5rem;
+    /* padding: 0.3rem 0.5rem; */
     border-radius: 7px;
     width: 120px;
+    height: 30px;
     max-width: 180px;
+    span{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(37, 53, 64);
+        & span{
+            font-weight: 600;
+        }
+    }
+    &:active{
+        background-color: rgb(49, 78, 97);
+    }
 }
 
 button{
@@ -126,7 +148,7 @@ header{
                 position: relative;
                 background-color: #242e33;
                 padding: 0.5rem 1rem;
-                border-radius: 9px;
+                border-radius: 7px;
                 /* width: fit-content; */
                 width: 60px;
                 height: 25px;
