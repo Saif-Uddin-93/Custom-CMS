@@ -154,6 +154,7 @@ const loginBtnPages = [
     '/application_dashboard.html',
     '/index.html',
     '/allposts.html',
+    '/create_post.html'
 ]
 
 // runs onload from body tag. if the user is not logged in then redirect to login page.
