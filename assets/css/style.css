@@ -184,7 +184,7 @@ aside, #aside-wrapper{
     position: relative;
     transition: width 0.5s;
     height: 100vh;
-    background-color: #101517;
+    background-color: #193649;
     width: var(--aside-width);
     display: flex;
     flex-direction: column;
