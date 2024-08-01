@@ -54,12 +54,14 @@ a{
     }
     &:hover{
         background-color: rgb(37, 53, 64);
+        border: 1px solid rgb(23, 32, 38);
         & span{
             font-weight: 600;
         }
     }
     &:active{
         background-color: rgb(49, 78, 97);
+        border: 1px solid rgb(37, 53, 64);
     }
 }
 
