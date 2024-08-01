@@ -22,6 +22,20 @@ a{
     text-decoration: none   ;
 }
 
+.justify-self-end{
+    display: flex;
+    justify-content: end;
+}
+
+.button-class{
+    background-color: rgb(23, 32, 38);
+    margin: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 7px;
+    width: 120px;
+    max-width: 180px;
+}
+
 button{
     background: none;
     border: none;
@@ -235,7 +249,10 @@ aside{
     z-index: -1;
 }
 
-
+.page-section{
+    margin: 2rem;
+    padding: 1rem;
+}
 
 #login-modal-bg{
     height: 100vh;

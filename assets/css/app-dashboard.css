@@ -1,9 +1,6 @@
 #main-wrapper{
     width: 100%;
     display: flex;
-    #recent-pages, #all-pages{
-        margin: 3rem;
-    }
     #recent-table, #all-table{
         margin: 2rem 3rem;
         position: relative;
