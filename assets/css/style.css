@@ -32,6 +32,11 @@ a{
     justify-content: end;
 }
 
+.justify-self-start{
+    display: flex;
+    justify-content: start;
+}
+
 .center-class{
     display: flex;
     justify-content: center;
