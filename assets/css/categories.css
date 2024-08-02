@@ -8,6 +8,7 @@
     width: 70vw;
     border: 1px solid black;
     ul{
+        margin: 20px 0px;
         padding-left: 20px;
         .delete-item{
             color: rgb(255, 54, 54);
