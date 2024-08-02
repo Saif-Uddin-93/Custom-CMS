@@ -3,10 +3,20 @@
     display: flex;
     gap: 5rem;
     padding: 5% 5%;
-    #cms-info, #company-info{
+    .home-section{
+        /* display: flex;
+        flex-direction: column;
+        gap: 20px; */
         text-align: center;
+        font-weight:600;
         height: 600px;
         width: 450px;
         border: 1px solid black;
+        border-radius: 25px;
+        background-color: aliceblue;
+        *{
+            color: rgb(62, 5, 114);
+            padding: 1rem 1rem;
+        }
     }
 }
