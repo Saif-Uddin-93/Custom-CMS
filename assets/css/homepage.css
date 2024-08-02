@@ -1,11 +1,12 @@
 #main-wrapper{
-    width: 100%;
+    width: fit-content;
     display: flex;
     gap: 5rem;
-    padding: 5rem 18rem;
+    padding: 5% 5%;
     #cms-info, #company-info{
-        height: 700px;
-        width: 700px;
+        text-align: center;
+        height: 600px;
+        width: 450px;
         border: 1px solid black;
     }
 }

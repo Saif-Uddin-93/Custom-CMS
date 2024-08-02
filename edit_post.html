@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/add-new-post.css">
+    <link rel="stylesheet" href="./assets/css/edit-post.css">
 </head>
 <body onload="isProfileLoggedIn(window.location.href)">
     <div id="body-wrapper">
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                 </aside>
-                <section id="edit-post" class="page-section">
+                <section id="add-post" class="page-section">
                     <h1>Edit Post</h1>
                     <div class="input-wrapper">
                         <label for="new-post-title">Post Title</label>
@@ -83,6 +83,13 @@
                     <div class="input-wrapper">
                         <label for="new-post-tags">Post Tags</label>
                         <input id="new-post-tags" type="text">
+                    </div>
+                    <div class="input-wrapper">
+                        <h3>Upload Images:</h3>
+                        <button id="new-post-images" class="button-class center-class justify-self-start"><span>Upload</span></button>
+                        <ul>
+                            <li>image1.png</li>
+                        </ul>
                     </div>
                     <div class="input-wrapper">
                         <label for="new-post-content">Post Content</label>
