@@ -325,6 +325,10 @@ aside{
     margin-top: 1rem;
 }
 
+#submit-btn{
+    width: 65px;
+}
+
 #login-modal-bg{
     height: 100vh;
     width: 100vw;
