@@ -321,7 +321,7 @@ aside{
 .input-wrapper{
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: fit-content;
     margin-top: 1rem;
 }
 
