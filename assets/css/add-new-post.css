@@ -1,5 +1,5 @@
 #add-post{
-    height: 600px;
+    height: fit-content;
     width: 70vw;
     border: 1px solid black;
 }
@@ -36,9 +36,5 @@ input{
 }
 
 #new-post-images{
-    width: fit-content;
-    text-decoration: underline;
-    &:hover{
-        color: blue;
-    }
+    width: 65px;
 }
