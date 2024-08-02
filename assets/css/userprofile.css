@@ -87,6 +87,10 @@ aside{
     max-width: 200px;
 }
 
+#role-descripton-box{
+    max-width: 500px;
+}
+
 #role-description-h2{
     font-weight: 100;
 }
