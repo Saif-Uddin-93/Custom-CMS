@@ -70,6 +70,23 @@ a{
     }
 }
 
+.highlight-text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    span{
+        position: absolute;
+        text-align: center;
+    }
+    &:hover{
+        & span{
+            font-weight: 600;
+        }
+    }
+}
+
 button{
     background: none;
     border: none;
@@ -238,6 +255,7 @@ aside{
                 padding-right: 15px;
             }
             .tab-name{
+                font-size: 14px;
                 transition: opacity 2s;
                 opacity: 1;
                 text-align: center;
@@ -266,6 +284,15 @@ aside{
         }
     }
 }
+
+#dashboard-link{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
 #sidebar-icon-wrapper{
     position: fixed;
     bottom: 0;
