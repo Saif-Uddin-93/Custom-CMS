@@ -11,7 +11,7 @@ aside{
 
 #aside-wrapper{
     display: flex;
-    background-color: #183649;
+    /* background-color: #183649; */
     justify-content: start;
 }
 
