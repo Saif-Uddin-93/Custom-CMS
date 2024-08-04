@@ -1,3 +1,7 @@
+:root{
+    --login-border: #343c40;
+}
+
 #body-wrapper{
     max-width: var(--laptop-max-width);
     min-width: 1394px;
@@ -74,9 +78,10 @@ header{
         background-color: #101517;
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
-        border-left: 8px solid #31333a;
-        border-bottom: 8px solid #31333a;
-        border-top: 8px solid #31333a;
+        /* border-left: 8px solid #31333a; */
+        border-left: 8px solid var(--login-border);
+        border-bottom: 8px solid var(--login-border);
+        border-top: 8px solid var(--login-border);
         .info{
             width: 66%;
             text-align: center;
@@ -87,9 +92,9 @@ header{
         width: 40%;
         border-top-right-radius: 25px;
         border-bottom-right-radius: 25px;
-        border-right: 8px solid #31333a;
-        border-bottom: 8px solid #31333a;
-        border-top: 8px solid #31333a;
+        border-right: 8px solid var(--login-border);
+        border-bottom: 8px solid var(--login-border);
+        border-top: 8px solid var(--login-border);
         #login-title{
             display: flex;
             flex-direction: column;
