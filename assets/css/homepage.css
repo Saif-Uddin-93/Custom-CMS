@@ -15,7 +15,7 @@
         border-radius: 25px;
         background-color: aliceblue;
         *{
-            color: #49475B;
+            color: var(--main-font-color);
             padding: 1rem 1rem;
         }
     }
