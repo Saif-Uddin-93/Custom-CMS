@@ -157,6 +157,7 @@ const loginBtnPages = [
     '/create_post.html',
     '/categories.html',
     '/edit_post.html',
+    '/tags.html',
 ]
 
 // runs onload from body tag. if the user is not logged in then redirect to login page.
