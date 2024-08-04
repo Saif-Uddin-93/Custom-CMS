@@ -27,11 +27,19 @@
             background-color: aqua;
             height: 50px;
             width: 50px;
+            margin-top: 1rem;
+            margin-left: 1rem;
             z-index: 1;
         }
         tr td:first-child{
             &:hover{
-                color: blue;
+                span{
+                    position: absolute;
+                    color: blue;
+                    font-size: 32px;
+                    line-height: 0;
+                    left: 2.5rem;
+                }
                 .preview{
                     display: flex;
                 }
