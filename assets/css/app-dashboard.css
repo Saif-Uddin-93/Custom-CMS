@@ -28,7 +28,7 @@
             height: 50px;
             width: 50px;
             margin-top: 1rem;
-            margin-left: 1rem;
+            margin-left: 0.25rem;
             z-index: 1;
         }
         tr td:first-child{
