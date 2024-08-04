@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/add-new-post.css">
+    <link rel="stylesheet" href="./assets/css/categories.css">
 </head>
 <body onload="isProfileLoggedIn(window.location.href)">
     <div id="body-wrapper">
@@ -69,32 +69,20 @@
                         </div>
                     </div>
                 </aside>
-                <section id="add-post" class="page-section">
-                    <h1>Add Post</h1>
-                    <div class="input-wrapper">
-                        <label for="new-post-title">Post Title</label>
-                        <input id="new-post-title" type="text">
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="new-post-categories">Post Categories</label>
-                        <input id="new-post-categories" type="text">
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="new-post-tags">Post Tags</label>
-                        <input id="new-post-tags" type="text">
-                    </div>
-                    <div class="input-wrapper">
-                        <h3>Upload Images:</h3>
-                        <button id="new-post-images-btn" class="button-class center-class justify-self-start"><span>Upload</span></button>
+                <section id="categories-post" class="page-section">
+                    <h1>Tags</h1>
+                    <section>
                         <ul>
-                            <li>image1.png</li>
+                            <li>Admin <span class="delete-item">delete</span></li>
+                            <li>Educational <span class="delete-item">delete</span></li>
+                            <li>News <span class="delete-item">delete</span></li>
                         </ul>
-                    </div>
+                    </section>
                     <div class="input-wrapper">
-                        <label for="new-post-content">Post Content</label>
-                        <textarea id="new-post-content"wrap="hard"></textarea>
+                        <label for="categories-input">Add tags</label>
+                        <input id="categories-input"></input>
                         <div class="justify-self-end">
-                            <button id="new-post-submit" class="button-class center-class">
+                            <button id="submit-btn" class="button-class center-class">
                                 <span>Submit</span>
                             </button>
                         </div>
