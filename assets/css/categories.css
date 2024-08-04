@@ -10,13 +10,5 @@
     ul{
         margin: 20px 0px;
         padding-left: 20px;
-        .delete-item{
-            color: rgb(255, 54, 54);
-            font-size: 10px;
-            &:hover{
-                cursor: pointer;
-                font-weight: 600;
-            }
-        }
     }
 }

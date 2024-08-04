@@ -73,6 +73,16 @@ a{
     }
 }
 
+.delete-item{
+    color: rgb(255, 54, 54);
+    font-size: 10px;
+    margin-left: 0.5rem;
+    &:hover{
+        cursor: pointer;
+        font-weight: 600;
+    }
+}
+
 .highlight-text{
     position: relative;
     display: flex;
