@@ -34,3 +34,19 @@ input{
         }
     }
 }
+
+#new-post-delete{
+    background-color: red;
+    span{font-weight: bold;}
+    &:hover{
+        background-color: rgb(187, 0, 0);
+        border: 3px solid rgb(135, 0, 0);
+        & span{
+            font-weight:bolder;
+        }
+    }
+    &:active{
+        background-color: rgb(49, 78, 97);
+        border: 1px solid rgb(37, 53, 64);
+    }
+}
