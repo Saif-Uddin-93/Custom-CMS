@@ -190,12 +190,19 @@ function isProfileLoggedIn(href){
     } 
 }
 
+function toggleUploadModal(){
+    // loginModal.classList.toggle('hide-modal');
+    const uploadModal = document.querySelector('#upload-modal');
+    const hideBg = document.querySelector('.hide-bg');
+    uploadModal.classList.toggle('hide-modal');
+    hideBg.classList.toggle('hide-modal');
+    console.log('open upload modal')
+}
+
 document.addEventListener('click', (event)=>{
     // // open/close login modal
-    // if (event.target.matches('#login-button') ||
-    //     event.target.matches('.close-icon')) {
-    //     loginModal.classList.toggle('hide-modal');
-    // }
+    console.log('click event', event.target)
+    console.log('click event text', event.target.textContent)
 
     // check user login
     if (event.target.matches('#sign-in-button') && event.target.textContent === 'Log in'){
@@ -222,8 +229,18 @@ document.addEventListener('click', (event)=>{
         openPosts();
     }
 
+    // toggle opne/close sidebar
     else if(event.target.matches("#sidebar-button *") || event.target.matches("#sidebar-button")){
         openSideBar();
+    }
+
+    // open/close upload menu
+    else if (event.target.matches('#new-post-images-btn') ||
+        event.target.matches('.btn-close') ||
+        event.target.textContent==='Upload' ||
+        event.target.textContent==='Cancel')
+    {
+            toggleUploadModal();
     }
 })
 

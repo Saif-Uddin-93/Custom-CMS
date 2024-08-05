@@ -322,6 +322,11 @@ aside{
     }
 }
 
+.hide-modal{
+    display: none;
+    z-index: -1;
+}
+
 .hide{
     transition: opacity 1s;
     opacity: 0;
