@@ -172,7 +172,6 @@ function isProfileLoggedIn(href){
     console.log(index)
     // currentUser checks which user currently logged in or returns '' if no-one logged in.
     let currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
-    currentUser = currentUser.slice(0, 1).toUpperCase() + currentUser.slice(1);
     console.log("load profile", currentUser)
     // page checks which webpage currently on
     const page = href.slice(index+2)
@@ -190,7 +189,14 @@ function isProfileLoggedIn(href){
     else if (page === '/userprofile.html') {
         console.log(currentUser, page)
         const profileName = document.querySelector("#real-name");
-        profileName.textContent = currentUser;
+        const profileLoginName = document.querySelector("#login-name");
+        db = JSON.parse(localStorage.getItem('CMS_users'))
+        for (let i=1; i < db.length; i++){
+            if (db[i].username.toLowerCase() === currentUser.toLowerCase()){
+                profileName.textContent = `${capitalise(db[i].firstName)} ${capitalise(db[i].lastName)}`;
+                profileLoginName.textContent = currentUser;
+            }
+        }
     } 
 }
 
@@ -293,4 +299,9 @@ function loginErrorMsg(msg=''){
         loginError.classList.toggle('hide')
         loginError.textContent = '';
     },2)
+}
+
+
+function capitalise(string){
+    return string.slice(0, 1).toUpperCase() + string.slice(1).toLowerCase();
 }
