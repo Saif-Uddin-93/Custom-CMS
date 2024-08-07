@@ -60,11 +60,13 @@ function addNewUser(){
             // if user doesn't exist, check is entered passwords match
             if (pass === reTypePass){
                 // creates a new user as an object which is saved to local storage
+                const now = new Date().toLocaleDateString()
                 const userLogin = {
                     username : user,
                     password : pass,
                     firstName : fnameEl.value,
-                    lastName : lnameEl.value
+                    lastName : lnameEl.value,
+                    created : now
                 }
                 saveLocal(userLogin, true);
                 console.log(`user: ${user} created`);
@@ -190,11 +192,17 @@ function isProfileLoggedIn(href){
         console.log(currentUser, page)
         const profileName = document.querySelector("#real-name");
         const profileLoginName = document.querySelector("#login-name");
+        const profileInfoName = document.querySelector("#info-name");
+        const profileInfoEmail = document.querySelector("#info-email");
+        const profileInfoAge = document.querySelector("#info-age");
         db = JSON.parse(localStorage.getItem('CMS_users'))
         for (let i=1; i < db.length; i++){
             if (db[i].username.toLowerCase() === currentUser.toLowerCase()){
                 profileName.textContent = `${capitalise(db[i].firstName)} ${capitalise(db[i].lastName)}`;
                 profileLoginName.textContent = currentUser;
+                profileInfoName.value = profileName.textContent
+                profileInfoEmail.value = currentUser
+                profileInfoAge.value = db[i].created
             }
         }
     } 
