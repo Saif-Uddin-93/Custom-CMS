@@ -1,5 +1,7 @@
 const loginModal = document.querySelector("#login-modal");
 const loginBtn = document.querySelector('#login-button');
+const fnameEl = document.querySelector('#login-fname-input');
+const lnameEl = document.querySelector('#login-lname-input');
 const userEl = document.querySelector('#login-user-input');
 const passEl = document.querySelector('#login-password-input');
 const signInBtn = document.querySelector('#sign-in-button');
@@ -60,7 +62,9 @@ function addNewUser(){
                 // creates a new user as an object which is saved to local storage
                 const userLogin = {
                     username : user,
-                    password : pass
+                    password : pass,
+                    firstName : fnameEl.value,
+                    lastName : lnameEl.value
                 }
                 saveLocal(userLogin, true);
                 console.log(`user: ${user} created`);
