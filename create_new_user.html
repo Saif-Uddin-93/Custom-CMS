@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/sign-up.css">
     <title>Login</title>
 </head>
 <body>
@@ -21,13 +22,13 @@
         <main>
             <div id="main-wrapper">
                 <section id="login-main">
-                    <div id="cms-info">
+                    <!-- <div id="cms-info">
                         <section class="info">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi excepturi, veritatis consequatur repellendus cum beatae optio minus voluptatibus inventore fugiat omnis possimus recusandae nulla saepe praesentium iure laboriosam quam. Sequi?
                         </section>
-                    </div>
-                    <div id="login-main-content">
-                        <div id="login-wrapper">
+                    </div> -->
+                    <div id="login-main-content" class="center-class">
+                        <div id="login-wrapper" class="center-class">
                             <div id="login-title">
                                 <h1>Welcome!</h1>
                                 <h2>Create your login and get started</h2>
@@ -35,25 +36,33 @@
                             <!-- login-input should be a form -->
                             <div id="login-input">
                                 <div id="login-details">
+                                    <div id="login-fname">
+                                        <label for="login-fname-input" id="login-fname-input-label">First Name</label>
+                                        <input type="text" id="login-fname-input" class="login-inputs" placeholder="John">
+                                    </div>
+                                    <div id="login-lname">
+                                        <label for="login-lname-input" id="login-lname-input-label">Last Name</label>
+                                        <input type="text" id="login-lname-input" class="login-inputs" placeholder="Doe">
+                                    </div>
                                     <div id="login-user">
-                                        <label for="login-user-input" id="login-user-input-label">Username</label>
-                                        <input type="text" id="login-user-input" placeholder="name@domain.com">
+                                        <label for="login-user-input" id="login-user-input-label">Email</label>
+                                        <input type="text" id="login-user-input" class="login-inputs" placeholder="name@domain.com">
                                     </div>
                                     <div id="login-password">
                                         <label for="login-password-input" id="login-password-input-label">Password</label>
                                         <input 
                                         type="password" 
-                                        id="login-password-input" 
-                                        placeholder="••••••••">
+                                        id="login-password-input" class="login-inputs" placeholder="••••••••">
                                     </div>
                                     <div id="login-retype-password">
                                         <label for="login-retype-password-input" id="login-retype-password-input-label">Re-Type Password</label>
-                                        <input type="password" id="login-retype-password-input" placeholder="••••••••">
+                                        <input type="password" id="login-retype-password-input" class="login-inputs" placeholder="••••••••">
                                         <div class="login-error hide"></div>
                                     </div>
                                 </div>
                                 <div id="login-buttons">
                                     <button id="sign-in-button" type="submit">Sign up</button>
+                                    <button type="submit" onclick="location.href='./index.html'">Log in</button>
                                     <!-- <button id="new-user-button" type="submit">Create account</button> -->
                                 </div>
                             </div>
