@@ -176,7 +176,7 @@ function isProfileLoggedIn(href){
     // redirect if no-one logged in
     if(currentUser === ''){
         if(page !== '/index.html' && href !== 'https://saif-uddin-93.github.io/Custom-CMS/'){
-            location.href = "./login.html"
+            location.href = "./index.html"
         }
     }
     else if(loginBtnPages.includes(page) || href === 'https://saif-uddin-93.github.io/Custom-CMS/' || href === 'http://127.0.0.1:5501/') {
@@ -251,7 +251,7 @@ document.addEventListener('keydown', (event)=>{
     if (event.key === "Enter" && (active === "login-user-input" 
         || active === "login-password-input" 
         || active === "login-retype-password-input")){
-        if (location.href.includes("login.html")){
+        if (location.href.includes("index.html")){
             checkUserLogin();
         }
         else if (location.href.includes("create_new_user.html")){
@@ -269,7 +269,7 @@ function loadUserProfile(){
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
     console.log(currentUser)
     if (currentUser) location.href = './userprofile.html'
-    else location.href = './login.html'
+    else location.href = './index.html'
 }
 
 // Timer object to simplify setTimeout/clearTimeout functions
