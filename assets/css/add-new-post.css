@@ -14,12 +14,55 @@ input{
     width: 180px;
 }
 
-#new-post-content{
+#new-post-title{
+    width: 600px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+/* #new-post-content{
     color: black;
     padding-left: 0.2rem;
     min-width: 700px;
     height: 250px;
     vertical-align: top;
+} */
+
+#new-post-content{
+    height: 700px;
+    width: 700px;
+    background-color: #fff;
+    border: 1px solid black;
+    margin-top: 50px;
+    border-radius: 5px;
+    *{
+        color: black;
+        span{
+            color: #fff;
+        }
+    }
+    .headers{
+        display: flex;
+        width: 100%;
+        background-color: aliceblue;
+        .header{
+            height: 50px;
+            width: 100px;
+            /* border-left: 1px solid black; */
+            border-right: 1px solid black;
+            /* border-top: 1px solid black; */
+            &.selected{
+                background-color: #fff;
+            }
+        }
+    }
+    .content-title{
+        padding: 1rem;
+    }
+    #blog-content{
+        margin: 1rem;
+        padding: 0.5rem;
+    }
 }
 
 .input-wrapper {

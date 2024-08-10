@@ -260,6 +260,10 @@ document.addEventListener('click', (event)=>{
     {
             toggleUploadModal();
     }
+
+    else if (event.target.matches(".header")){
+        switchContentTab(event.target);
+    }
 })
 
 document.addEventListener('keydown', (event)=>{
@@ -282,6 +286,16 @@ document.addEventListener('keydown', (event)=>{
     //     loginModal.classList.toggle('hide-modal')
     // }
 })
+
+function switchContentTab(target){
+    const contentHeaders = document.querySelectorAll(".header")
+        for (let i=0; i<contentHeaders.length; i++){
+            if (contentHeaders[i]===target){
+                target.classList.add("selected")
+            }
+            else contentHeaders[i].classList.remove("selected")
+        }
+}
 
 function loadUserProfile(){
     const currentUser = JSON.parse(localStorage.getItem('CMS_users'))[0].currentUser;
