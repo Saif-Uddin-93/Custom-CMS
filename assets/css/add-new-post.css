@@ -105,7 +105,8 @@ input{
 
 #content-additional-info{
     border: none;
-    min-width: 200px;
+    min-width: 250px;
+    max-width: 300px;
     height: fit-content;
     padding:5px;
     border-radius: 5px;
