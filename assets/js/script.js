@@ -273,7 +273,9 @@ document.addEventListener('keydown', (event)=>{
     if (event.key === "Enter" && (active === "login-user-input" 
         || active === "login-password-input" 
         || active === "login-retype-password-input")){
-        if (location.href.includes("index.html")){
+        if (location.href.includes("index.html") || 
+        location.href === 'https://saif-uddin-93.github.io/Custom-CMS/' || 
+        location.href === 'http://127.0.0.1:5501/'){
             checkUserLogin();
         }
         else if (location.href.includes("create_new_user.html")){
