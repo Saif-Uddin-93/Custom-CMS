@@ -83,6 +83,7 @@ a{
     &:hover{
         cursor: pointer;
         font-weight: 600;
+        outline: 1px solid red;
     }
 }
 

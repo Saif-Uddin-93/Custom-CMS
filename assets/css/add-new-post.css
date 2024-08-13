@@ -105,12 +105,12 @@ input{
 
 #content-additional-info{
     border: none;
-    min-width: 250px;
+    min-width: 25 0px;
     max-width: 300px;
     height: fit-content;
     padding:5px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: rgb(190, 204, 200);;
 }
 
 .content-info{
