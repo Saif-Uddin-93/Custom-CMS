@@ -414,7 +414,7 @@ input{
 
 @media(max-width: 760px){
     #body-wrapper{
-        max-width: 760px;
+        max-width: 100vw;
         min-width: 100%
     }
     /* header, #header-wrapper{

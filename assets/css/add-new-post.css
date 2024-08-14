@@ -120,7 +120,7 @@ input{
 }
 
 .content-item{
-    margin-top: 0.2rem;
+    margin-top: 0.4rem;
     display: flex;
 }
 
@@ -130,20 +130,48 @@ input{
     }
 }
 
+/* #schedule-button{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.2rem 0.4rem;
+    background-color: #fff;
+    width: 130px;
+    height: 30px;
+    span{
+        color: rgb(57, 57, 57);
+        font-weight: 500;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+    }
+    &:hover{
+        background-color: rgb(37, 53, 64);
+        border: 1px solid rgb(23, 32, 38);
+        & span{
+            font-weight: 600;
+        }
+    }
+    &:active{
+        background-color: rgb(49, 78, 97);
+        border: 1px solid rgb(37, 53, 64);
+    }
+} */
+
 #content-author{
     img{
         background-color: #193649;
         max-width: 10%;
         padding: 0.1rem;
+        border-radius: 50%;
     }
     #author-name{
         max-width: 110px;
-        padding-top: 0.2rem;
-        margin-left: 0.4rem;
+        padding-top: 0.4rem;
+        margin-left: 0.8rem;
     }
 }
 
-.add-item{
+.add-item, #schedule-button{
     background-color: rgb(240, 253, 255);
     outline: 1px solid black;
     border-radius: 10px;
@@ -165,9 +193,14 @@ input{
         }
     }
     &:active{
-        background-color: rgb(213, 246, 251);
+        background-color: rgb(180, 210, 215);
         border: 1px solid rgb(37, 53, 64);
     }
+}
+
+#schedule-button{
+    width: 110px;
+    margin: 0.3rem;
 }
 
 .word-list{
