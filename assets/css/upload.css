@@ -1,23 +1,11 @@
-/* 
-*, *:after, *:before {
-	box-sizing: border-box;
-} */
-
 :root {
 	--c-action-primary: #2e44ff;
 	--c-action-primary-accent: #e9e5ff;
 	--c-action-secondary: #c7c7c7;
 	--c-text-primary: #0d0f21; 
-	--c-text-secondary: #6a6b76;
+	--c-text-secondary: #0d0f21;
 	--c-background-primary: #d0d1de;
 }
-
-/* body {
-	font-family: "Inter", sans-serif;
-	color: var(--c-text-primary);
-	background-color: var(--c-background-primary);	
-	line-height: 1.5;
-} */
 
 input, button, select, textarea {
 	font: inherit;
@@ -34,56 +22,15 @@ input, button, select, textarea {
 }
 
 #upload-modal {
-	position: absolute;
-	z-index: 3;
-	top: 15%;
-	left: 35%;
 	width: 90%;
 	max-width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10vh;
-	margin-bottom: 10vh;
 	background-color: #FFF;
 	border-radius: .5rem;
 	box-shadow: 0 5px 15px rgba(#000, .2); 
 }
 
-.upload-modal-header {
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	padding: 1.5rem 1.5rem 1rem;
-}
-
-.logo-circle {
-	width: 3.5rem;
-	height: 3.5rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	background-color: var(--c-action-primary-accent);
-	svg {
-		max-width: 1.5rem;
-	}
-}
-
-.btn-close {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 2.25rem;
-	height: 2.25rem;
-	border-radius: .25rem;
-	border: none;
-	background-color: transparent;
-	&:hover, &:focus {
-		background-color: var(--c-action-primary-accent);
-	}
-}
-
 .upload-modal-body {
+	display: inline;
 	padding: 1rem 1.5rem;
 }
 
@@ -92,6 +39,8 @@ input, button, select, textarea {
 }
 
 .upload-modal-description {
+	position: absolute;
+	left: 1rem;
 	color: var(--c-text-secondary);
 }
 
@@ -124,15 +73,26 @@ input, button, select, textarea {
 	margin-top: 1rem;
 	display: block;
 	font-weight: 700;
-		color: var(--c-text-primary);
+		color: var(--c-text-primary) !important;
+}
+
+.content-block.content-upload{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .upload-area-description {
-		display: block;
-		color: var(--c-text-secondary);
+	/* position: absolute; */
+	display: block;
+	color: var(--c-text-secondary) !important;
 	strong {
-		color: var(--c-action-primary);
 		font-weight: 700;
+		&:hover{
+			color: var(--c-action-primary) !important;
+		}
+			
 	}
 }
 
@@ -154,7 +114,7 @@ input, button, select, textarea {
 }
 
 .btn-primary {
-	color: #FFF;
+	color: #0d0f21;
 	background-color: var(--c-action-primary);
 	border-color: var(--c-action-primary);
 	&:hover{

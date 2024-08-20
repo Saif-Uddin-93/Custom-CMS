@@ -82,7 +82,8 @@ input{
         border-top-right-radius: 5px;
         background-color: #fff;
     }
-    #content-text-body{
+    .content-block{
+        border-radius: 0px;
         background-color: #fff;
     }
     #blog-content{
