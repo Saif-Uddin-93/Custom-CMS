@@ -29,6 +29,7 @@
         }
         .preview{
             position: absolute;
+            left: 35%;
             display: none;
             background-color: aqua;
             height: 50px;
@@ -40,7 +41,7 @@
         tr td:first-child{
             &:hover{
                 span{
-                    /* position: absolute; */
+                    position: static;
                     color: blue;
                     font-size: 32px;
                     line-height: 0;
