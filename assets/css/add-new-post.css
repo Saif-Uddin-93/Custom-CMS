@@ -30,7 +30,7 @@ input{
 
 #new-post-content{
     display: flex;
-    height: 750px;
+    height: fit-content;
     gap: 2rem;
     /* width: 750px; */
     /* background-color: #fff; */
