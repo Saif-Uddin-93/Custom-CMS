@@ -1,6 +1,12 @@
 #main-wrapper{
     width: 100%;
     display: flex;
+    #recent-pages, #pages-table{
+        width: 75vw;
+        #recent-table, #all-table{
+            min-width: 70vw;
+        }
+    }
     #recent-table, #all-table{
         margin: 2rem 3rem;
         position: relative;
